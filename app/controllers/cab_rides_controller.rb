@@ -1,0 +1,2 @@
+class CabRidesController < ApplicationController
+end
