@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BulldogTaxi::Application.config.secret_key_base = 'c00712bfcca3d978141d73fef9ebfb6a4502c98b996e88b67463d90188458abe558d81f51fefa9f17238a639ff3b1cebb3d190440c7ad73e5696ec2be52a80e6'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+BulldogTaxi::Application.config.secret_key_base = secure_token
