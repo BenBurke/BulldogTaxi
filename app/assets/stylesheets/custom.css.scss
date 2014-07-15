@@ -1,5 +1,39 @@
 @import "bootstrap";
 
+html {
+  overflow-y: scroll;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .cover {
 	background-image: url('bdt_logo.jpg');
 	-webkit-background-size: cover;
@@ -24,7 +58,7 @@
 
 .hero-unit {
 	margin-top: 10px;
-	
+
 
 
 }

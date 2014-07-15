@@ -1,6 +1,13 @@
 BulldogTaxi::Application.routes.draw do
   root 'static_pages#landing'
   get "users/new"
+  resources :users
+  resources :trips 
+  resources :flights
+  resources :carriers
+  resources :airports
+  resources :cab_rides
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
