@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # Add this before filter to force CAS Authentication on all controllers + actions
-  before_filter CASClient::Frameworks::Rails::Filter, unless => :skip_login?
+  before_filter CASClient::Frameworks::Rails::Filter, :unless => :skip_login?
 
   # And their protected methods
   protected
@@ -16,6 +16,15 @@ class ApplicationController < ActionController::Base
 			return false
 		end
 	end
+
+	def checksignin
+	if session[:cas_user] == nil
+		@signedin = false
+	else
+		getMe
+		@signedin = true
+	end
+end
 
 	# hack for skip_before_filter with CAS
 	# overwrite this method (with 'true') in any controller you want to skip CAS authentication
