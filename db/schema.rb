@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714190938) do
+ActiveRecord::Schema.define(version: 20140715160302) do
 
   create_table "airports", force: true do |t|
     t.string   "name"
@@ -67,11 +67,11 @@ ActiveRecord::Schema.define(version: 20140714190938) do
     t.string   "name"
     t.string   "email"
     t.integer  "phone_number"
-    t.string   "net_id"
     t.string   "college"
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "netid"
   end
 
 end
