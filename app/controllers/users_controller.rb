@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+  	@user = User.find_by(netid: session[:cas_user])
   end
   def index
   end 
@@ -7,7 +8,7 @@ class UsersController < ApplicationController
   	@user = User.find_by(netid: session[:cas_user])
   	if @user.update_attributes(user_params)
   		flash[:success] = "Account Created"
-  		redirect_to @user
+  		redirect_to controller: 'trips', action: 'new'
   	end 
   end 
   def show
