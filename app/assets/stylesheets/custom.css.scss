@@ -1,1 +1,8 @@
 @import "bootstrap";
+
+.cover {
+	background-image: url('bdt_logo.jpg');
+	-webkit-background-size: cover;
+	min-height: 500px;
+	background-size: cover;
+}
