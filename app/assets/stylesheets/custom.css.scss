@@ -65,3 +65,9 @@ textarea {
 .container {
 	margin:0px;
 }
+
+body {
+	background-image: url('background_pattern.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+}
