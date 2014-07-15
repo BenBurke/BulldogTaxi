@@ -1,3 +1,21 @@
-Hello World!
+Hello World! <%= @user.netid %>
 
-<%= @user.netid %>
+<div class="container">
+	<div class='span4'>
+	</div>
+	<div class='span4 hero-unit center'>
+		<%= form_for @user do |f| %>
+			<%= f.label :name %>
+		  <%= f.text_field :name %>
+
+		  <%= f.label "Yale email" %>
+		  <%= f.text_field :email %>
+
+		  <%= f.submit "Create my Trip", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+	<div class='span4'>
+	</div>
+</div>
+
+
