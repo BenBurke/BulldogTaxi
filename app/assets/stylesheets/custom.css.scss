@@ -5,4 +5,29 @@
 	-webkit-background-size: cover;
 	min-height: 500px;
 	background-size: cover;
+	position: relative;
+	padding: 0px;
+}
+
+.bottom {
+	position: absolute;
+	bottom: 0px;
+	margin: 0px;
+	width: 100%;
+
+}
+
+.edge {
+	padding-right: 5%;
+
+}
+
+.hero-unit {
+	margin-top: 10px;
+	
+
+
+}
+.container {
+	margin:0px;
 }
