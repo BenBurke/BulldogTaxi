@@ -3,13 +3,15 @@ class TripsController < ApplicationController
 	def new
 		@user = User.find_by(netid: session[:cas_user])
 		@trip = @user.trips.new
+		@flight = Flight.new
 	end 
 
 	def create 
 		@user = User.find_by(netid: session[:cas_user])
 		@trip = @user.trips.new(trip_params)
+		@flight = @trip.flights.build
 		if @trip.save
-			flash[:success]= "Welcome to the Sample App!"
+			flash[:success]= "Trip Created!"
   		redirect_to @trip
   	else
   		render 'new'
@@ -24,6 +26,7 @@ class TripsController < ApplicationController
 	end 
 
 
+
 	private
 		def user_params
 			params.require(:user).permit(:name, :email)
@@ -32,6 +35,7 @@ class TripsController < ApplicationController
    	def trip_params
    		params.require(:trip).permit(:flight_number, :confirmation)
    	end 
+
 
 
 end
