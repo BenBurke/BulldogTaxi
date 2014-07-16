@@ -1,6 +1,9 @@
 Hello World! <%= @user.netid %>
 
 <div class="container">
+	<div class="center row">
+		<h1> Step 1: User Information </h1>
+	</div>	
 	<div class='span4'>
 	</div>
 	<div class='span4 hero-unit center'>
@@ -8,8 +11,11 @@ Hello World! <%= @user.netid %>
 			<%= f.label :name %>
 		  <%= f.text_field :name %>
 
-		  <%= f.label "Yale email" %>
+		  <%= f.label "Yale email:" %>
 		  <%= f.text_field :email %>
+
+		  <%= f.label "Phone Number:" %>
+		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
 		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
 		<% end %>
