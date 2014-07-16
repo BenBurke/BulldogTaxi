@@ -6,23 +6,21 @@
 	<div class='span4'>
 	</div>
 	<div class='span4 hero-unit center'>
-		<%= form_for(@trip, :url =>{:action => 'create'}) do |f| %>
+	<%= form_for @trip do |f| %>
+		<p>
+			<%= f.label :flight_number, "Flight Number:" %>
+			<%= f.text_field :flight_number %>
+			
+			<%= label_tag :departure_airport, "Departure Airport:" %>
+			<%= text_field_tag :departure_airport %>
 
-			Departure Airport <br />
-				<%= f.fields_for :flights do |flight_field| %>
-					<%= flight_field.text_field :departure_airport %> <br/><br/>
-				<% end %> 
+			<%= label_tag :arrival_airport, "Arrival Airport:" %>
+			<%= text_field_tag :arrival_airport %>
 
-			Flight Number:
-			<%= f.text_field :flight_number %><br/><br/>
-
-			<div class='actions'>
-				<%= submit_tag "Next", class: "btn btn-primary" %>
-			</div>
+			<%= f.hidden_field :confirmation, value: rand(100..200) %>
+		</p>
+			<p><%= f.submit "submit" %> </p>
 		<% end %>
-
-
-
 	</div>
 	<div class='span4'>
 	</div>
