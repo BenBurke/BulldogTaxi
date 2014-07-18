@@ -1,13 +1,19 @@
-<h2> Testing </h2>
-User:
-<%= @user.name %>
-<%= @user.email %> 
-<%= @user.phone_number %> <br/>
-Trip:
-<%= @trip.flight_number %>
-<%= @trip.confirmation %> <br/>
-Flight:
-<%= @flight.departure_airport %>
-<%= @flight.arrival_airport %>
-<%= @flight.arrival_datetime %>
-<%= @flight.carrier_name %>
+<div class="span2">
+</div>
+<div class="hero-unit span8 center">
+	<h2> Is this your Trip? </h2>
+	<h3>User:</h3>
+		<b>Name:</b> <%= @user.name %> <br>
+		<b>Email:</b> <%= @user.email %> <br>
+		<b>phone:</b> <%= @user.phone_number %> <br/>
+	<h3>Trip:</h3>
+		<b>flight number:</b> <%= @trip.flight_number %> <br>
+		<b>confirmation number:</b> <%= @trip.confirmation %> <br/>
+	<h3>Flight:</h3>
+		<b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+		<b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+		<b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+		<b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+</div>
+<div class="span2">
+</div>

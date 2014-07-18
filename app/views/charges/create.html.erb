@@ -1,1 +1,17 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<div class= "hero-unit center span8">
+    <h2> Trip Receipt, <small>please keep a copy for your records </small> </h2>
+    <h3>User:</h3>
+      <b>Name:</b> <%= @user.name %> <br>
+      <b>Email:</b> <%= @user.email %> <br>
+      <b>phone:</b> <%= @user.phone_number %> <br/>
+    <h3>Trip:</h3>
+      <b>flight number:</b> <%= @trip.flight_number %> <br>
+      <b>confirmation number:</b> <%= @trip.confirmation %> <br/>
+    <h3>Flight:</h3>
+      <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+      <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+      <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+      <b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+
+     <h3> Paid: $50 </h3>
+</div>

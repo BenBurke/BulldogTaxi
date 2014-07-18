@@ -2,19 +2,33 @@
   <div class= "span2">
   </div>
   <div class= "hero-unit center span8">
-  <h2>Step 4: Process your Transaction</h2>
+    <h2> Review Trip and Pay </h2>
+    <h3>User:</h3>
+      <b>Name:</b> <%= @user.name %> <br>
+      <b>Email:</b> <%= @user.email %> <br>
+      <b>phone:</b> <%= @user.phone_number %> <br/>
+    <h3>Trip:</h3>
+      <b>flight number:</b> <%= @trip.flight_number %> <br>
+      <b>confirmation number:</b> <%= @trip.confirmation %> <br/>
+    <h3>Flight:</h3>
+      <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+      <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+      <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+      <b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
   <article>
     <label class="amount">
       <span>
-      	<h3>Amount: $5.00</h3>
+        <h3>Amount: $50.00</h3>
       </span>
     </label>
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button button-large"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
+          data-description="Purchase your Ride"
+          data-amount="5000"></script>
+
+
 </div>
 <div class= "span2">
 </div>

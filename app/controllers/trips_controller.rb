@@ -10,7 +10,10 @@ class TripsController < ApplicationController
 		@user = User.find_by(netid: session[:cas_user])
 		@trip = @user.trips.new(trip_params)
         arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
-		@flight = @trip.create_flight(arrival_airport: params[:arrival_airport], departure_airport: params[:departure_airport], trip_id: params[:trip_id], arrival_datetime: arrival_datetime, carrier: params[:carrier])
+		@flight = @trip.create_flight(arrival_airport: params[:arrival_airport], 
+                                    departure_airport: params[:departure_airport], 
+                                    trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
+                                    carrier_name: params[:carrier_name])
 			if @trip.save
 				flash[:success] = "Trip Created!"
 				@flight.update_attributes(trip_id: @trip.id)
