@@ -7,6 +7,7 @@ BulldogTaxi::Application.routes.draw do
   resources :carriers
   resources :airports
   resources :cab_rides
+  resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

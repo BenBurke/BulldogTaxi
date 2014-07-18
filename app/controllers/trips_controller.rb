@@ -14,7 +14,7 @@ class TripsController < ApplicationController
 			if @trip.save
 				flash[:success] = "Trip Created!"
 				@flight.update_attributes(trip_id: @trip.id)
-				redirect_to @trip
+				redirect_to controller: 'charges', action: 'new'
 			else
 				render 'new'
 			end 

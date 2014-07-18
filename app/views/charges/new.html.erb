@@ -1,0 +1,21 @@
+<%= form_tag charges_path do %>
+  <div class= "span2">
+  </div>
+  <div class= "hero-unit center span8">
+  <h2>Step 4: Process your Transaction</h2>
+  <article>
+    <label class="amount">
+      <span>
+      	<h3>Amount: $5.00</h3>
+      </span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button button-large"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"></script>
+</div>
+<div class= "span2">
+</div>
+<% end %>
