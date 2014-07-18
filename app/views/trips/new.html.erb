@@ -12,11 +12,17 @@
 	<div class='span4 hero-unit center'>
 	<%= form_for @trip do |f| %>
 		<p>
-			<%= label_tag :arrival_datetime, "Arrival Date and Time:" %>
-			<%= text_field_tag :arrival_datetime, nil, class: "trip_arrival_date" %>
+			<%= label_tag :arrival_date, "Arrival Date:" %>
+			<%= text_field_tag :arrival_date, nil, class: "trip_arrival_date" %>
+
+			<%= label_tag :arrival_time, "Arrival Time:" %>
+			<%= text_field_tag :arrival_time, nil, class: "trip_arrival_time" %>
 
 			<%= f.label :flight_number, "Flight Number:" %>
 			<%= f.text_field :flight_number %>
+
+			<%= label_tag :carrier, "Carrier:" %>
+			<%= text_field_tag :carrier %>
 			
 			<%= label_tag :departure_airport, "Departure Airport:" %>
 			<%= text_field_tag :departure_airport %>
@@ -26,7 +32,7 @@
 
 			<%= f.hidden_field :confirmation, value: rand(100..200) %>
 		</p>
-			<p><%= f.submit "submit" %> </p>
+			<p><%= f.submit "submit", class: "btn btn-primary btn-large" %> </p>
 		<% end %>
 	</div>
 	<div class='span4'>

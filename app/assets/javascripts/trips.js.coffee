@@ -3,5 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-	$(".trip_arrival_date").datepicker()
-	return
+	$(".trip_arrival_date").datepicker() 
+	$(".trip_arrival_time").timepicker(
+		minuteStep: 5,
+        showInputs: false,
+        disableFocus: true
+		)
+  	
