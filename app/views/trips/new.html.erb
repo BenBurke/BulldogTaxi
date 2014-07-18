@@ -16,13 +16,16 @@
 			<%= text_field_tag :arrival_date, nil, class: "trip_arrival_date" %>
 
 			<%= label_tag :arrival_time, "Arrival Time:" %>
-			<%= text_field_tag :arrival_time, nil, class: "trip_arrival_time" %>
+			<div class="input-append bootstrap-timepicker">
+				<%= text_field_tag :arrival_time, nil, class: "trip_arrival_time" %>
+
+			</div>
 
 			<%= f.label :flight_number, "Flight Number:" %>
 			<%= f.text_field :flight_number %>
 
-			<%= label_tag :carrier, "Carrier:" %>
-			<%= text_field_tag :carrier %>
+			<%= label_tag :carrier_name, "Carrier:" %>
+			<%= text_field_tag :carrier_name %>
 			
 			<%= label_tag :departure_airport, "Departure Airport:" %>
 			<%= text_field_tag :departure_airport %>
