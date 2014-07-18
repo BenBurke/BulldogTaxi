@@ -88,3 +88,8 @@ body {
   margin-top: 45px;
   @include box_sizing;
 }
+
+.stripe-button-el span {
+  font-size: 1.3em !important;
+  padding: 1em !important;
+}
