@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   	@user = User.find_by(netid: session[:cas_user])
     params[:user][:phone_number] = phoneNumber(params[:user][:phone_number])
   	if @user.update_attributes(user_params)
-  		flash[:success] = "Account Created"
+  		flash[:success] = "Welcome " + @user.name.split(" ")[0] + "!"
   		redirect_to controller: 'trips', action: 'new'
   	end 
   end 
