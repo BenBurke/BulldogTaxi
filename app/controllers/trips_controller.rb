@@ -15,7 +15,7 @@ class TripsController < ApplicationController
                                     trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
                                     carrier_name: params[:carrier_name])
 			if @trip.save
-				flash[:success] = "Trip Created!"
+				flash.now[:success] = "Trip Created!"
 				@flight.update_attributes(trip_id: @trip.id)
 				redirect_to controller: 'charges', action: 'new'
 			else

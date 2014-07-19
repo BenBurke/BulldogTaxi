@@ -1,8 +1,4 @@
-<div class="container">
-	<div class="center row">
-		<h1> Step 1: User Information </h1>
-	</div>	
-	<div class='span4'>
+<div class='span4'>
 	</div>
 	<div class='span4 hero-unit center'>
 		<%= form_for @user do |f| %>
@@ -15,11 +11,16 @@
 		  <%= f.label "Phone Number:" %>
 		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
-		  <%= hidden_field_tag :page, 1 %>
+		  <%= f.label "Yale Class Year:" %>
+		  <%= f.number_field :year %>
 
-		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
+		  <%= f.label "Yale College:" %>
+		  <%= f.text_field :college %>
+
+		  <%= hidden_field_tag :page, 0 %>
+
+		  <%= f.submit "Update", class: "btn btn-large btn-primary" %>
 		<% end %>
 	</div>
 	<div class='span4'>
 	</div>
-</div>

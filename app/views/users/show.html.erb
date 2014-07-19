@@ -1,2 +1,12 @@
-<%= @user.name %>
-<%= @user.email %>
+<div class= "hero-unit left span8">
+    <h3>User:</h3>
+      <b>Name:</b> <%= @user.name %> <br>
+      <b>Email:</b> <%= @user.email %> <br>
+      <b>phone:</b> <%= @user.phone_number %> <br/>
+      <b>NetID:</b> <%= @user.netid %> <br/>
+      <b>Class Year:</b> <%= @user.year %> <br/>
+      <b>College:</b> <%= @user.college %> <br/><br/>
+      <div class="center">
+      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
+			</div>
+</div>

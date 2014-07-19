@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
     @amount = 5000
 
     customer = Stripe::Customer.create(
-      :email => 'patrick.casey@yale.edu',
+      :email => @user.email,
       :card  => params[:stripeToken]
     )
 
@@ -27,9 +27,9 @@ class ChargesController < ApplicationController
     )
 
     if charge.paid == true
-      flash[:success] = "Payment Processed! Print this form for your Records"
+      flash.now[:success] = "Payment processed! Print this form for your records"
     else
-      flash[:error] = "Payment Failed, Please Try Again"
+      flash.now[:error] = "Payment failed, please try again"
     end 
   
   rescue Stripe::CardError => e
