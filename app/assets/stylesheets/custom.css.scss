@@ -93,3 +93,12 @@ body {
   font-size: 1.3em !important;
   padding: 1em !important;
 }
+
+#trip_history {
+  height: 50%;
+  overflow: scroll;
+}
+
+#user_info {
+  height: 50%;
+}

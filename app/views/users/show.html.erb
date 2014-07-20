@@ -1,4 +1,4 @@
-<div class= "hero-unit left span8">
+<div class= "hero-unit left span5" id="user_info">
     <h3>User:</h3>
     	<%= image_tag @user.image_url.to_s %>
       <b>Name:</b> <%= @user.name %> <br>
@@ -10,4 +10,15 @@
       <div class="center">
       	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
 			</div>
+</div>
+<div class="hero-unit left span7">
+	<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
+		<h2> Trip History:</h2>
+	<div class="span" id="trip_history">
+		<% @trips.each do |trip| %>
+				<h3><%= link_to trip.flight.arrival_datetime.to_s.split(" ")[0] + ",  Flight: " + trip.flight_number , trip %></h3>
+				confirmation number: <%= trip.confirmation %><br>
+				<%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %>
+		<% end %>
+	</div>
 </div>
