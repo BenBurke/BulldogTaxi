@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718130513) do
+ActiveRecord::Schema.define(version: 20140719151728) do
 
   create_table "airports", force: true do |t|
     t.string   "name"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140718130513) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "netid"
+    t.string   "image"
   end
 
 end

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+airline_carriers = Carrier.create([{name: 'Southwest'}, {name: 'Air Canada'}, {name: 'American Airlines'}, {name: 'Delta'}, {name: 'JetBlue'}, {name: 'United Airlines'}, {name: 'US Airways'}])
+airports = Airport.create([{name: 'Bradley International'}, {name: 'More coming soon!'}])

@@ -18,16 +18,16 @@
 			<%= f.label :flight_number, "Flight Number:" %>
 			<%= f.text_field :flight_number %>
 
-			<%= label_tag :carrier_name, "Carrier:" %>
-			<%= text_field_tag :carrier_name %>
+			<%= label_tag :carrier_id, "Carrier:" %>
+			<%= select_tag :carrier_id, options_from_collection_for_select(@carriers, :id, :name) %>
 			
 			<%= label_tag :departure_airport, "Departure Airport:" %>
 			<%= text_field_tag :departure_airport %>
 
-			<%= label_tag :arrival_airport, "Arrival Airport:" %>
-			<%= text_field_tag :arrival_airport %>
+			<%= label_tag :arrival_airport_id, "Arrival Airport:" %>
+			<%= select_tag :arrival_airport_id, options_from_collection_for_select(@airports, :id, :name) %>
 
-			<%= f.hidden_field :confirmation, value: rand(100..200) %>
+			<%= f.hidden_field :confirmation, value: "BDT-" + rand(1000..9999).to_s %>
 		</p>
 			<p><%= f.submit "submit", class: "btn btn-primary btn-large" %> </p>
 		<% end %>

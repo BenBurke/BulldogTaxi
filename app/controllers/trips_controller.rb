@@ -4,19 +4,23 @@ class TripsController < ApplicationController
 		@user = User.find_by(netid: session[:cas_user])
 		@trip = @user.trips.new
 		@flight = @trip.build_flight
+        @carriers = Carrier.all
+        @airports = Airport.all
 	end 
 
 	def create 
 		@user = User.find_by(netid: session[:cas_user])
 		@trip = @user.trips.new(trip_params)
         arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
-		@flight = @trip.create_flight(arrival_airport: params[:arrival_airport], 
+		@flight = @trip.create_flight(arrival_airport_id: params[:arrival_airport_id], 
                                     departure_airport: params[:departure_airport], 
                                     trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
-                                    carrier_name: params[:carrier_name])
+                                    carrier_id: params[:carrier_id])
 			if @trip.save
 				flash.now[:success] = "Trip Created!"
-				@flight.update_attributes(trip_id: @trip.id)
+				@flight.update_attributes(trip_id: @trip.id,
+                                         carrier_name: Carrier.find(params[:carrier_id]).name,
+                                         arrival_airport: Airport.find(params[:arrival_airport_id]).name)
 				redirect_to controller: 'charges', action: 'new'
 			else
 				render 'new'
