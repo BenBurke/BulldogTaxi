@@ -1,0 +1,17 @@
+
+<h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
+       <h3> Paid: $50 </h3>
+
+      <h3>Trip For:</h3>
+        <b>Name:</b> <%= @user.name %> <br>
+        <b>Email:</b> <%= @user.email %> <br>
+        <b>Phone:</b> <%= @user.phone_number %> <br/>
+        <b>NetID:</b> <%= @user.netid %> <br/>
+      <h3>Flight Information:</h3>
+        <b>Flight Number:</b> <%= @trip.flight_number %> <br>
+        <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+        <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+        <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+        <b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+
+ 
