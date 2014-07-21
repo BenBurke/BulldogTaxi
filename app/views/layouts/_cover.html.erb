@@ -6,7 +6,24 @@
 					<nav>
 						<ul class="nav pull-right edge">
 							<li><%= link_to "Create Trip!", new_user_path %></li>
-							<li><%= link_to "Home", User.find_by(netid: session[:cas_user]) %></li>
+							<% if !@signedin %>
+							<li><%= link_to "Sign In", User.find_by(netid: session[:cas_user]) %></li>
+							<% else %>
+
+							<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= User.find_by(netid: session[:cas_user]).name.split(" ")[0] %> <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", User.find_by(netid: session[:cas_user]) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", "#" %>
+                </li>
+              </ul>
+            </li>
+
+							<% end %>
 						</ul>
 					</nav>
 				</div>

@@ -40,13 +40,14 @@ textarea {
 	min-height: 500px;
 	background-size: cover;
 	position: relative;
-	padding: 0px;
+  font-size: 15px;
 }
 
 .bottom {
 	position: absolute;
 	bottom: 0px;
 	margin: 0px;
+  padding: 0px;
 	width: 100%;
 
 }

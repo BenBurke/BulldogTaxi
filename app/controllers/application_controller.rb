@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :getMe
 
+  before_filter :checksignin
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -23,6 +25,15 @@ class ApplicationController < ActionController::Base
 	def skip_login? 
 	  false 
 	end	
+
+	def checksignin
+		if session[:cas_user] == nil
+			@signedin = false
+		else
+			getMe
+			@signedin = true
+		end
+	end
  
 
 end
