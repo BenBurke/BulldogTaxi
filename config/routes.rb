@@ -1,5 +1,6 @@
 BulldogTaxi::Application.routes.draw do
   root 'static_pages#landing'
+  match '/logout',   to:'static_pages#logout', via: 'get'
   get "users/new"
   resources :users
   resources :trips 
