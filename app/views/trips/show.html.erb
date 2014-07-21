@@ -1,15 +1,16 @@
 <div class="row">
 	<div class="span2">
 	</div>
-	<div class="hero-unit span8 center">
+	<div class="hero-unit span8 left">
 		<h2> Trip from <%= @flight.departure_airport %> to <%= @flight.arrival_airport %> </h2>
 		<h3>User:</h3>
 			<b>Name:</b> <%= @user.name %> <br>
 			<b>Email:</b> <%= @user.email %> <br>
-			<b>phone:</b> <%= @user.phone_number %> <br/>
+			<b>Phone:</b> <%= @user.phone_number %> <br/>
 			<b>NetID:</b> <%= @user.netid %> <br/>
 		<h3>Trip:</h3>
-			<b>confirmation number:</b> <%= @trip.confirmation %> <br/>
+			<b>Confirmation Number:</b> <%= @trip.confirmation %> <br/>
+			<b>Payment Status: </b> <%= @trip.payment_status %> <br/>
 		<h3>Flight:</h3>
 			<b>Flight Number:</b> <%= @trip.flight_number %> <br>
 			<b>Departure Airport:</b> <%= @flight.departure_airport %><br>

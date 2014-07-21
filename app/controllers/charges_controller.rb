@@ -28,6 +28,7 @@ class ChargesController < ApplicationController
 
     if charge.paid == true
       flash.now[:success] = "Payment processed! Thanks " + @user.name.split(" ")[0] + ", you should receive a confirmation email shortly."
+      @trip.update_attributes(payment_status: true)
     else
       flash.now[:error] = "Payment failed, please try again"
     end 
