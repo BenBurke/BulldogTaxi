@@ -7,7 +7,7 @@
       <h3>Trip For:</h3>
         <b>Name:</b> <%= @user.name %> <br>
         <b>Email:</b> <%= @user.email %> <br>
-        <b>Phone:</b> <%= @user.phone_number %> <br/>
+        <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
         <b>NetID:</b> <%= @user.netid %> <br/>
       <h3>Flight Information:</h3>
         <b>Flight Number:</b> <%= @trip.flight_number %> <br>
