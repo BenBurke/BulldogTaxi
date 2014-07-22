@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
 	end 
 	def landing
   	end
+  def about
+  end
 
   	def logout
   		CASClient::Frameworks::Rails::Filter.logout(self)

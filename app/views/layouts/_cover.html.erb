@@ -5,7 +5,8 @@
 	  				<%= link_to "Bulldog Taxi", root_path, id: "logo" %>
 					<nav>
 						<ul class="nav pull-right edge">
-							<li><%= link_to "Create Trip!", new_user_path %></li>
+							<li><%= link_to "Create Trip", new_user_path %></li>
+							<li><%= link_to "About Us", about_path %></li>
 							<% if !@signedin %>
 							<li><%= link_to "Sign In", User.find_by(netid: session[:cas_user]) %></li>
 							<% else %>
