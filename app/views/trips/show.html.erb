@@ -16,7 +16,8 @@
 			<b>Departure Airport:</b> <%= @flight.departure_airport %><br>
 			<b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
 			<b>Flight Provider:</b> <%= @flight.carrier_name %><br>
-			<b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+			<b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
+          	<b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>>
 	</div>
 	<div class="span2">
 	</div>

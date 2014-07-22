@@ -1,5 +1,6 @@
 class TripMailer < ActionMailer::Base
   default from: "bulldogtaxirides@gmail.com"
+  add_template_helper(ApplicationHelper)
 
   
   def trip_purchase_confirmation(trip)

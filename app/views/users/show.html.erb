@@ -17,11 +17,14 @@
 		<div class="span" id="trip_history">
 			<% @trips.each do |trip| %>
 				<% if trip.payment_status == true %>
-					<h3><%= link_to trip.flight.arrival_datetime.to_s.split(" ")[0] + ",  Flight: " + trip.flight_number , trip %></h3>
-					confirmation number: <%= trip.confirmation %><br>
-					<%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %>
+					<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport.split(" ")[0] + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+					<%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %><br>
+					Confirmation Number: <%= trip.confirmation %><br>
+					Flight Number: <%= trip.flight_number %>
+					
 				<% end %>	
 			<% end %>
 		</div>
 	</div>
 </div>
+
