@@ -3,7 +3,7 @@
 	    <h3><%= @user.name %></h3>
 	    	<%= image_tag @user.image_url.to_s %>
 	      <b>Email:</b> <%= @user.email %> <br>
-	      <b>Phone:</b> <%= @user.phone_number %> <br/>
+	      <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
 	      <b>NetID:</b> <%= @user.netid %> <br/>
 	      <b>Class Year:</b> <%= @user.year %> <br/>
 	      <b>College:</b> <%= @user.college %> <br/><br/>

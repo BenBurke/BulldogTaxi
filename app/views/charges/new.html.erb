@@ -8,7 +8,7 @@
         <h3>User:</h3>
           <b>Name:</b> <%= @user.name %> <br>
           <b>Email:</b> <%= @user.email %> <br>
-          <b>phone:</b> <%= @user.phone_number %> <br/>
+          <b>phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
         <h3>Flight:</h3>
           <b>flight number:</b> <%= @trip.flight_number %> <br>
           <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
