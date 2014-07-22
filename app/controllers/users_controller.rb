@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   	@user = User.find_by(netid: session[:cas_user])
   end
   def index
+    redirect_to :root
   end 
   def update
   	@user = User.find_by(netid: session[:cas_user])

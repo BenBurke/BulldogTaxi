@@ -1,5 +1,9 @@
 class ChargesController < ApplicationController
 
+  def index
+    redirect_to :root
+  end
+
   def new
     @user = User.find_by(netid: session[:cas_user])
     @trip = @user.trips.last

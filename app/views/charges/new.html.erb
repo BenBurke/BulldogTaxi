@@ -2,7 +2,7 @@
   <div class="row">
     <div class= "span2">
     </div>
-    <div class= "hero-unit span8">
+    <div id="review" class= "hero-unit span8">
       <div class='left'>
         <h2> Review Trip and Pay </h2>
         <h3>User:</h3>
@@ -30,8 +30,11 @@
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Purchase your Ride"
                 data-amount="5000"></script><br>
-        <div class="stripe_logo pull-right">
+        <div class="stripe_logo pull-right row">
           <%= link_to image_tag("stripe_logo.png", :alt => "powered by stripe"), "https://stripe.com/", :target => "_blank" %>
+      </div>
+      <div id="stripe_assurance" class="row pull-left">
+      <p>Stripe is a secure, third-party payment service. We'll never see your card information.<p>
       </div>
     </div>
 
