@@ -19,10 +19,10 @@
 			<%= select_tag :carrier_id, options_from_collection_for_select(@carriers, :id, :name) %>
 			
 			<%= f.label :flight_number, "Flight Number:" %>
-			<%= f.text_field :flight_number %>
+			<%= f.text_field :flight_number, placeholder: "7777" %>
 			
-			<%= label_tag :departure_airport, "Departure Airport:" %>
-			<%= text_field_tag :departure_airport %>
+			<%= label_tag :departure_airport, "Departure Airport or City:" %>
+			<%= text_field_tag :departure_airport, placeholder: "JFK International or New York"  %>
 
 			<%= label_tag :arrival_airport_id, "Arrival Airport:" %>
 			<%= select_tag :arrival_airport_id, options_from_collection_for_select(@airports, :id, :name) %>
