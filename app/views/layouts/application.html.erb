@@ -7,25 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="cover">
-		<div class="navbar navbar-inverse bottom">
-			<div class="navbar-inner">
-				<div class="container">
-	  				<%= link_to "Bulldog Taxi", '#', id: "logo" %>
-					<nav>
-						<ul class="nav pull-right edge">
-							<li><%= link_to "Create Trip!", '#' %></li>
-							<li><%= link_to "Home", root_path %></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<%= render 'layouts/cover' %>
 	<div>
+		<% flash.each do |key, value| %>
+			<div class="row text-center">
+			<div class="alert alert-<%= key %>"><%= value %></div>
+			</div>
+		<% end %>
 		<%= yield %>
 	</div>
+
+<div>
+	<%= render 'layouts/footer' %>
+</div>
+
 	<div>
 		<%= debug(params) if Rails.env.development? %>
 	</div>

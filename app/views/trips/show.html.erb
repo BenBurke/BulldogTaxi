@@ -1,2 +1,23 @@
-<%= @trip.flight_number %>
-<%= @trip.confirmation %>
+<div class="row">
+	<div class="span2">
+	</div>
+	<div class="hero-unit span8 left">
+		<h2> Trip from <%= @flight.departure_airport %> to <%= @flight.arrival_airport %> </h2>
+		<h3>User:</h3>
+			<b>Name:</b> <%= @user.name %> <br>
+			<b>Email:</b> <%= @user.email %> <br>
+			<b>Phone:</b> <%= @user.phone_number %> <br/>
+			<b>NetID:</b> <%= @user.netid %> <br/>
+		<h3>Trip:</h3>
+			<b>Confirmation Number:</b> <%= @trip.confirmation %> <br/>
+			<b>Payment Status: </b> <%= @trip.payment_status %> <br/>
+		<h3>Flight:</h3>
+			<b>Flight Number:</b> <%= @trip.flight_number %> <br>
+			<b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+			<b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+			<b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+			<b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+	</div>
+	<div class="span2">
+	</div>
+</div>

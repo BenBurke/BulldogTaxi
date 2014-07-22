@@ -1,18 +1,35 @@
-<%= @user.name %>
-<%= @user.email %>
-
-
 <div class="container">
+	<div class="center row">
+		<h1> Step 2: Flight Information </h1>
+	</div>	
 	<div class='span4'>
 	</div>
 	<div class='span4 hero-unit center'>
-		<%= form_for @trip do |f| %>
-			<%= f.label "Flight Number" %>
-		  <%= f.text_field :flight_number %>
+	<%= form_for @trip do |f| %>
+		<p>
+			<%= label_tag :arrival_date, "Arrival Date:" %>
+			<%= text_field_tag :arrival_date, nil, class: "trip_arrival_date" %>
 
-		  <%= f.hidden_field :confirmation, value: rand(100..200) %>
+			<%= label_tag :arrival_time, "Arrival Time:" %>
+			<div class="input-append bootstrap-timepicker">
+				<%= text_field_tag :arrival_time, nil, class: "trip_arrival_time" %>
+			</div>
 
-		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
+			<%= label_tag :carrier_id, "Carrier:" %>
+			<%= select_tag :carrier_id, options_from_collection_for_select(@carriers, :id, :name) %>
+			
+			<%= f.label :flight_number, "Flight Number:" %>
+			<%= f.text_field :flight_number %>
+			
+			<%= label_tag :departure_airport, "Departure Airport:" %>
+			<%= text_field_tag :departure_airport %>
+
+			<%= label_tag :arrival_airport_id, "Arrival Airport:" %>
+			<%= select_tag :arrival_airport_id, options_from_collection_for_select(@airports, :id, :name) %>
+
+			<%= f.hidden_field :confirmation, value: "BDT-" + rand(1000..9999).to_s %>
+		</p>
+			<p><%= f.submit "submit", class: "btn btn-primary btn-large" %> </p>
 		<% end %>
 	</div>
 	<div class='span4'>

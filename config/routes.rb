@@ -1,12 +1,15 @@
 BulldogTaxi::Application.routes.draw do
   root 'static_pages#landing'
+  match '/logout',   to:'static_pages#logout', via: 'get'
   get "users/new"
+  match '/about', to: 'static_pages#about', via: 'get'
   resources :users
   resources :trips 
   resources :flights
   resources :carriers
   resources :airports
   resources :cab_rides
+  resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

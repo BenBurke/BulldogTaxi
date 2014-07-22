@@ -1,15 +1,25 @@
-Hello World! <%= @user.netid %>
-
+<%= @user.netid %>
 <div class="container">
+	<div class="center row">
+		<h1> Step 1: User Information </h1>
+	</div>	
 	<div class='span4'>
 	</div>
 	<div class='span4 hero-unit center'>
 		<%= form_for @user do |f| %>
-			<%= f.label :name %>
-		  <%= f.text_field :name %>
+			<%= label_tag :first_name, "First name:" %>
+		  <%= text_field_tag :first_name %>
 
-		  <%= f.label "Yale email" %>
+		  <%= label_tag :last_name, "Last name:" %>
+		  <%= text_field_tag :last_name %>
+
+		  <%= f.label "Yale email:" %>
 		  <%= f.text_field :email %>
+
+		  <%= f.label "Phone number:" %>
+		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
+
+		  <%= hidden_field_tag :page, "form" %>
 
 		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
 		<% end %>

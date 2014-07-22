@@ -1,0 +1,28 @@
+<%= @user.name %>
+<%= @user.email %>
+
+
+<div class="container">
+	<div class='span4'>
+	</div>
+	<div class='span4 hero-unit center'>
+		<%= form_for @trip do |f| %>
+		<p>
+			<%= f.label :flight_number, "Flight Number:" %>
+			<%= f.text_field :flight_number %>
+		</p>
+			<% f.fields_for :flight do |builder| %>
+				<p>
+					<%= builder.label :departure_airport, "Departure Airport" %>
+					<%= builder.text_field :departure_airport %>
+				</p>
+			<% end %>
+			<p><%= f.submit "submit" %> </p>
+		<% end %>
+
+
+
+	</div>
+	<div class='span4'>
+	</div>
+</div>

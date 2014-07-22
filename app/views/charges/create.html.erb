@@ -1,0 +1,20 @@
+<div class="row">
+  <div class= "hero-unit center span8">
+        <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
+       <h3> Paid: $50 </h3>
+      <h2> Trip Receipt, <br><small>A confirmation email has been sent, which you may print for your records. Additionally, you can view your trip any time through your <b><%=link_to "profile page", @user %></b>. Our algorithms are currently working to find you a match! You can upgrade our matching ability by updating your <%=link_to "profile", @user %> with your Residential College and Class Year. Meet our representatives between doors 2 and 3 near baggage claim and there you will meet the other Yalies in your group and will be on your way. </small> </h2>
+
+      <h3>Trip For:</h3>
+        <b>Name:</b> <%= @user.name %> <br>
+        <b>Email:</b> <%= @user.email %> <br>
+        <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
+        <b>NetID:</b> <%= @user.netid %> <br/>
+      <h3>Flight Information:</h3>
+        <b>Flight Number:</b> <%= @trip.flight_number %> <br>
+        <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
+        <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+        <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+        <b>Arrival Date & Time:</b> <%= @flight.arrival_datetime %><br>
+
+  </div>
+</div>

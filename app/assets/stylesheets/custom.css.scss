@@ -40,13 +40,14 @@ textarea {
 	min-height: 500px;
 	background-size: cover;
 	position: relative;
-	padding: 0px;
+  font-size: 15px;
 }
 
 .bottom {
 	position: absolute;
 	bottom: 0px;
 	margin: 0px;
+  padding: 0px;
 	width: 100%;
 
 }
@@ -89,3 +90,39 @@ body {
   @include box_sizing;
 }
 
+.stripe-button-el span {
+  font-size: 1.3em !important;
+  padding: 1em !important;
+}
+
+#trip_history {
+  height: 50%;
+  overflow: scroll;
+}
+
+#user_info {
+  height: 50%;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer ul {
+  text-align: center;
+  list-style: none;
+  font-size: 20px;
+  margin: 10px 0px 0px 0px;
+}
+
+#review {
+  padding-bottom: 5px;
+}
+
+#stripe_assurance {
+  padding-top: 20px;
+  font-size: 17px;
+}
