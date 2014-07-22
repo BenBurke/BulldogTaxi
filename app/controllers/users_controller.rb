@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def update
   	@user = User.find_by(netid: session[:cas_user])
     params[:user][:phone_number] = phoneNumber(params[:user][:phone_number])
+    params[:user][:name] = joinName(params[:first_name],params[:last_name])
     if params[:page] == "form" # this directs the redirect based upon hidden field returns for edit.html.erb & (user)new.html.erb
     	if @user.update_attributes(user_params)
     		flash[:success] = "Welcome " + @user.name.split(" ")[0] + "!"
@@ -28,6 +29,11 @@ class UsersController < ApplicationController
     @user = User.find_by(netid: session[:cas_user])
 
   end 
+
+  def joinName(first_name,last_name)
+    result = first_name + " " + last_name
+    return result
+  end
 
   def phoneNumber(input)
     if input.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)

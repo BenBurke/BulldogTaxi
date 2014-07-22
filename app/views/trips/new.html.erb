@@ -15,11 +15,11 @@
 				<%= text_field_tag :arrival_time, nil, class: "trip_arrival_time" %>
 			</div>
 
-			<%= f.label :flight_number, "Flight Number:" %>
-			<%= f.text_field :flight_number %>
-
 			<%= label_tag :carrier_id, "Carrier:" %>
 			<%= select_tag :carrier_id, options_from_collection_for_select(@carriers, :id, :name) %>
+			
+			<%= f.label :flight_number, "Flight Number:" %>
+			<%= f.text_field :flight_number %>
 			
 			<%= label_tag :departure_airport, "Departure Airport:" %>
 			<%= text_field_tag :departure_airport %>
