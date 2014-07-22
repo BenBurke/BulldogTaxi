@@ -2,9 +2,10 @@
   <div class="row">
     <div class= "span2">
     </div>
-    <div id="review" class= "hero-unit span8">
+    <div class= "hero_compress hero-unit span8">
       <div class='left'>
         <h2> Review Trip and Pay </h2>
+          <%= link_to "Edit", edit_trip_path(@trip), class: "btn-primary btn-large pull-right" %>
         <h3>User:</h3>
           <b>Name:</b> <%= @user.name %> <br>
           <b>Email:</b> <%= @user.email %> <br>
@@ -14,7 +15,6 @@
           <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
           <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
           <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
-          <b>Payment Status: </b> <%= @trip.payment_status %> <br>
           <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
           <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
       </div>

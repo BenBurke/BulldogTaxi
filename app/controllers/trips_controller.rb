@@ -30,12 +30,39 @@ class TripsController < ApplicationController
 	end 
 
 	def update
+
+		 @trip = Trip.find(params[:id])
+		 @flight = @trip.flight
+			if @trip.update_attributes(trip_params)
+		    	arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
+					@flight.update_attributes(arrival_airport_id: params[:arrival_airport_id], 
+		                                    departure_airport: params[:departure_airport], 
+		                                    trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
+		                                    carrier_id: params[:carrier_id])
+						flash.now[:success] = "Trip Updated!"
+						@flight.update_attributes(trip_id: @trip.id,
+		                                         carrier_name: Carrier.find(params[:carrier_id]).name,
+		                                         arrival_airport: Airport.find(params[:arrival_airport_id]).name)
+						if @trip.payment_status == false
+							redirect_to controller: 'charges', action: 'new'
+						else
+							redirect_to @trip
+						end
+			end
 	end 
 
 	def show
 		@trip = Trip.find(params[:id])
 		@user = User.find(@trip.user_id)
 		@flight = @trip.flight
+	end
+
+	def edit
+		@trip = Trip.find(params[:id])
+		@user = User.find(@trip.user_id)
+		@flight = @trip.flight
+		@carriers = Carrier.all
+    @airports = Airport.all
 	end
 
 	def buildDateTime(date, time)
