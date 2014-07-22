@@ -22,7 +22,7 @@
 			<%= f.text_field :flight_number, placeholder: "7777" %>
 			
 			<%= label_tag :departure_airport, "Departure Airport or City:" %>
-			<%= text_field_tag :departure_airport, placeholder: "JFK International or New York"  %>
+			<%= text_field_tag :departure_airport,nil, placeholder: "JFK International or New York"  %>
 
 			<%= label_tag :arrival_airport_id, "Arrival Airport:" %>
 			<%= select_tag :arrival_airport_id, options_from_collection_for_select(@airports, :id, :name) %>

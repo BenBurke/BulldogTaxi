@@ -1,5 +1,7 @@
 $(document).ready(function(){
-  $(".trip_arrival_date").datepicker();
+  $("#arrival_date").datepicker({minDate: 0});
+  // var min = $("#arrival_date").datepicker('option','minDate');
+  // console.log(min);
   $(".trip_arrival_time").timepicker({
   	minuteStep: 5,
   	showInputs: false,
