@@ -25,7 +25,7 @@ textarea {
   font-size: 1.7em;
   color: #fff;
   padding-top: 9px;
-  padding-left: 25px;
+  padding-left: 250px;
   font-weight: bold;
   line-height: 1;
 }
@@ -72,9 +72,10 @@ textarea {
 }
 
 body {
+
 	-webkit-background-size: cover;
 	background-size: cover;
-  background-image: url('background_pattern.png');
+  background-image: url( <%= asset_path('background_pattern.png') %> );
 }
 
 @mixin box_sizing {
