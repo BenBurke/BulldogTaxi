@@ -2,9 +2,10 @@
   <div class="row">
     <div class= "span2">
     </div>
-    <div id="review" class= "hero-unit span8">
+    <div class= "hero_compress hero-unit span8">
       <div class='left'>
         <h2> Review Trip and Pay </h2>
+          <%= link_to "Edit", edit_trip_path(@trip), class: "btn-primary btn-large pull-right" %>
         <h3>User:</h3>
           <b>Name:</b> <%= @user.name %> <br>
           <b>Email:</b> <%= @user.email %> <br>
@@ -21,7 +22,7 @@
         <article>
           <label class="amount">
             <span>
-              <h3>Amount: $50.00</h3>
+              <h3>Amount: $<%= @price %>.00</h3>
             </span>
           </label>
         </article>
@@ -29,7 +30,7 @@
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button button-large"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-description="Purchase your Ride"
-                data-amount="5000"></script><br>
+                data-amount="<%= @price*100 %>"></script><br>
         <div class="stripe_logo pull-right row">
           <%= link_to image_tag("stripe_logo.png", :alt => "powered by stripe"), "https://stripe.com/", :target => "_blank" %>
       </div>

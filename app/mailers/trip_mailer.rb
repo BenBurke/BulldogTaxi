@@ -7,6 +7,7 @@ class TripMailer < ActionMailer::Base
     @user = User.find(trip.user_id)
     @trip = trip
     @flight = @trip.flight
+    @price = getPrice(@user)
    
 
     mail to: @user.email, subject: "Trip Confirmation"

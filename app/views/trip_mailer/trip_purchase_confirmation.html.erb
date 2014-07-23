@@ -1,6 +1,6 @@
 <h2> Trip Confirmation for <%= @user.name %> </h2>
 <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
-       <h3> Paid: $50 </h3>
+       <h3> Paid: $<%= @price %>.00</h3>
 
       <h3>Trip For:</h3>
         <b>Name:</b> <%= @user.name %> <br>

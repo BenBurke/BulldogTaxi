@@ -9,7 +9,11 @@
 
 			<div class="row">
 				<h2> Create a Trip! </h2>
-					<%= link_to "Bradley to Yale!", new_user_path, class: "btn btn-large btn-primary" %>
+					<% if @signedin && User.find_by(netid: session[:cas_user]).name != nil %>
+						<%= link_to "Bradley to Yale!", new_trip_path, class: "btn btn-large btn-primary" %>
+					<% else %>
+						<%= link_to "Bradley to Yale!", new_user_path, class: "btn btn-large btn-primary" %>
+					<% end %>
 					<br><br><%= link_to "New York airports coming soon!", "#", class: "btn btn-secondary btn-large"%> 
 			</div>
 

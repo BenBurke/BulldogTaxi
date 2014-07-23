@@ -8,14 +8,17 @@ class ChargesController < ApplicationController
     @user = User.find_by(netid: session[:cas_user])
     @trip = @user.trips.last
     @flight = @trip.flight
+    @price = getPrice(@user)
   end
 
   def create
     @user = User.find_by(netid: session[:cas_user])
     @trip = @user.trips.last
     @flight = @trip.flight
+    @price = getPrice(@user)
+
     # Amount in cents
-    @amount = 5000
+    @amount = @price*100
 
     customer = Stripe::Customer.create(
       :email => @user.email,
@@ -54,5 +57,15 @@ class ChargesController < ApplicationController
   end
 
   def show
+    redirect_to :root
   end
+
+  def getPrice(user)
+    if user.tokens >= 1
+      price = 45
+    else
+      price = 50
+    end 
+    return price
+  end 
 end
