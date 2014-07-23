@@ -13,7 +13,7 @@
 		      <% end %>
 		  <% end %>
 
-		  <b> Money saved to date: </b> $<%= @user.trip_count*70%>.00<br><br><br>
+		  <b><small> Money saved to date (over full-price cabs): </b> $<%= @user.trip_count*70%>.00<small><br><br><br>
 
 	      <div class="center">
 	      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>

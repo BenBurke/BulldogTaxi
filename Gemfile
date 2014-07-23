@@ -3,7 +3,6 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 
-gem 'rubycas-client'
 
 gem 'stripe'
 gem 'bootstrap-datepicker-rails'
