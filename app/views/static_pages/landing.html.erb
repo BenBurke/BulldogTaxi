@@ -1,14 +1,16 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="span center hero-unit">
-			<h2>Bulldog Taxi <br><small>$50 Cab Ride from Bradley. Guaranteed. <br>
-			Dates of Operation: <b>August 20-24, 8am - 8pm</b>. We are there for you.</small></h2>
-			<h4> Don't worry about waiting for the bus or calling CT Limo's customer service line. Just land, collect your luggage, and stop by our airport stand to pick up your prepaid fare card.
-			Bulldog Taxi works by matching you with other Yale student travelers. We promise that you won't pay more than $50, and you'll never wait more than 30 minutes for a taxi.
-			 </h4>
+			<h2> Bulldog Taxi <h2><br><h3> $50 Cab Ride from Bradley. Guaranteed. <br></h3>
+			<p> Bulldog Taxi works by matching you with other Yale student travelers. Just land, collect your luggage, and meet us at the airport to pick up your prepaid fare card. <br> <b>Our Guarantee:</b> <br>
+				<ul>
+					<li> You won't pay more than $50 </li>
+					<li> If you ever wait more than an hour, your ride is half-price. </li>
+			</p>
 
 			<div class="row">
 				<h2> Create a Trip! </h2>
+				<h3>Dates of Operation: <b> August 20-24, 8am - 8pm</b>.</h3>
 					<% if @signedin && User.find_by(netid: session[:cas_user]).name != nil %>
 						<%= link_to "Bradley to Yale!", new_trip_path, class: "btn btn-large btn-primary" %>
 					<% else %>

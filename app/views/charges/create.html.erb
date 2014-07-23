@@ -2,7 +2,13 @@
   <div class= "hero-unit center span8">
         <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
        <h3> Paid: $<%= @price %>.00 </h3>
-      <h2> Trip Receipt, <br><small>A confirmation email has been sent, which you may print for your records. Additionally, you can view your trip any time through your <b><%=link_to "profile page", @user %></b>. Our algorithms are currently working to find you a match! You can upgrade our matching ability by updating your <%=link_to "profile", @user %> with your Residential College and Class Year. Meet our representatives between doors 2 and 3 near baggage claim and there you will meet the other Yalies in your group and will be on your way. </small> </h2>
+      <h2> Trip Receipt <br><small><b>Thanks for riding with Bulldog Taxi! We've sent you a confirmation email.</b>
+        <ul>
+          <li> Meet us at Bradley. We'll be between doors 2 and 3, near baggage claim </li>
+          <li> View your trip any time at your <b><%=link_to "profile page", @user %></b>. </li>
+          <li> Update your <b><%=link_to "profile page", @user %></b> to improve our matching algorithm. </li>
+        </ul>
+      </small> </h2>
 
       <h3>Trip For:</h3>
         <b>Name:</b> <%= @user.name %> <br>
