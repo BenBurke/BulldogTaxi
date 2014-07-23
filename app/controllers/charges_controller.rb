@@ -32,8 +32,18 @@ class ChargesController < ApplicationController
 
     if charge.paid == true
       flash.now[:success] = "Payment processed! Thanks " + @user.name.split(" ")[0] + ", you should receive a confirmation email shortly."
-      TripMailer.trip_purchase_confirmation(@trip).deliver
       @trip.update_attributes(payment_status: true)
+      @tokens = @user.tokens
+      if @tokens >= 1
+        @tokens = @user.tokens - 1 
+        @user.update_attributes(tokens: @tokens)
+      end 
+      if @user.parent_id != nil && @user.trips.count == 1
+        @parent = User.find(@user.parent_id)
+        @parent_tokens = @parent.tokens + 1
+        @parent.update_attributes(tokens: @parent_tokens)
+      end
+      TripMailer.trip_purchase_confirmation(@trip).deliver
     else
       flash.now[:error] = "Payment failed, please try again"
     end 

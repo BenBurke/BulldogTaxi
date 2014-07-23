@@ -15,7 +15,10 @@
         <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
         <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
         <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
-          <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
+        <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
+
+      <h5> Promotional Code: </h5> <%= @user.promo_code %> <br> <small>Share this code with your friends! If someone else signs up with your promotional code, they will get a discount on their ride and you will get cash back at the airport.</small>
+
 
   </div>
 </div>

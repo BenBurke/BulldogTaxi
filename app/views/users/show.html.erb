@@ -7,6 +7,12 @@
 	      <b>NetID:</b> <%= @user.netid %> <br/>
 	      <b>Class Year:</b> <%= @user.year %> <br/>
 	      <b>College:</b> <%= @user.college %> <br/><br/>
+	      <% if @user.trips.first != nil %>
+		      <% if @user.trips.first.payment_status == true %>
+		      <b>Promotional Code:</b> <%= @user.promo_code %> <br/><br><br>
+		      <% end %>
+		  <% end %>
+
 	      <div class="center">
 	      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
 				</div>

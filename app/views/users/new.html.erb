@@ -18,7 +18,11 @@
 		  <%= f.label "Phone number:" %>
 		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
+		  <%= label_tag "Promotional Code:" %>
+		  <%= text_field_tag :parent_code,nil, placeholder: "123ABC" %>
+
 		  <%= hidden_field_tag :page, "form" %>
+		  <%= f.hidden_field :promo_code, value: (@user.id + 137).to_s + (65+rand(25)).chr + (65+rand(25)).chr + (65+rand(25)).chr %>
 
 		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
 		<% end %>
