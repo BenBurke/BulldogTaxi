@@ -36,7 +36,7 @@ textarea {
 }
 
 .cover {
-  background-image: url(asset_path('bdt_logo.jpg'));
+  background-image: url(asset_url('bdt_logo.jpg', image));
 	-webkit-background-size: cover;
 	min-height: 500px;
 	background-size: cover;
