@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
 
   def new
     @user = User.find_by(netid: session[:cas_user])
-    @trip = @user.trips.last
+    @trip = @user.trips.first
     @flight = @trip.flight
     @price = getPrice(@user)
   end
@@ -37,6 +37,7 @@ class ChargesController < ApplicationController
       flash.now[:success] = "Payment processed! Thanks " + @user.name.split(" ")[0] + ", you should receive a confirmation email shortly."
       @trip.update_attributes(payment_status: true)
       @tokens = @user.tokens
+      TripMailer.trip_purchase_confirmation(@trip).deliver
       if @tokens >= 1
         @tokens = @user.tokens - 1 
         @user.update_attributes(tokens: @tokens)
@@ -46,7 +47,6 @@ class ChargesController < ApplicationController
         @parent_tokens = @parent.tokens + 1
         @parent.update_attributes(tokens: @parent_tokens)
       end
-      TripMailer.trip_purchase_confirmation(@trip).deliver
     else
       flash.now[:error] = "Payment failed, please try again"
     end 

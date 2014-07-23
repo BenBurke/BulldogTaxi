@@ -7,9 +7,12 @@ class TripMailer < ActionMailer::Base
     @user = User.find(trip.user_id)
     @trip = trip
     @flight = @trip.flight
-    @price = getPrice(@user)
+    if @user.tokens >=1
+  		@price = 45
+  	else
+  		@price = 50
+  	end 
    
-
     mail to: @user.email, subject: "Trip Confirmation"
   end
 end

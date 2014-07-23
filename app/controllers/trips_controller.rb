@@ -5,8 +5,8 @@ class TripsController < ApplicationController
 
 		@trip = @user.trips.new
 		@flight = @trip.build_flight
-    @carriers = Carrier.all
-    @airports = Airport.all
+    	@carriers = Carrier.all
+    	@airports = Airport.all
 
 	end 
 
