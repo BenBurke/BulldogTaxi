@@ -1,9 +1,6 @@
 <div class="cover">
-		<div class="navbar navbar-inverse bottom">
-			<div class="navbar-inner">
-				<div class="container">
+		<nav class="navbar bottom navbar-inverse navbar-inner container" role="navigation">
 	  				<%= link_to "Bulldog Taxi", root_path, id: "logo" %>
-					<nav>
 						<ul class="nav pull-right edge">
 							<% if @signedin && User.find_by(netid: session[:cas_user]).name != nil %>
 								<li><%= link_to "Create Trip", new_trip_path %></li>
@@ -31,9 +28,6 @@
 
 							<% end %>
 						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
+		</nav>
 	</div>
-	<div>
+	</div>

@@ -25,6 +25,7 @@ textarea {
   font-size: 1.7em;
   color: #fff;
   padding-top: 9px;
+  padding-left: 25px;
   font-weight: bold;
   line-height: 1;
 }
@@ -54,22 +55,26 @@ textarea {
 
 .edge {
 	padding-right: 5%;
+  color: white;
 
 }
 
 .hero-unit {
 	margin-top: 10px;
-
-
+  background-color: white;
+  border-style: solid;
+  border-width: 12px;
+  border-color: rgb(00, 66, 99);
+  border-radius: 10px;
 }
 .container {
 	margin:0px;
 }
 
 body {
-	background-image: url('background_pattern.png');
 	-webkit-background-size: cover;
 	background-size: cover;
+  background-image: url('background_pattern.png');
 }
 
 @mixin box_sizing {
@@ -116,7 +121,6 @@ footer ul {
   list-style: none;
   font-size: 20px;
   margin: 10px 0px 0px 0px;
-  background-color: rgb(00, 66, 99);
 }
 
 
@@ -132,4 +136,10 @@ footer ul {
 #trip_form_footer {
   padding-top: 5px;
   font-size: 10px;
+}
+
+.navbar-inner {
+  background-image: none;
+  background-color: rgb(00, 66, 99);
+  border: 0px
 }
