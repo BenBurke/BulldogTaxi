@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def phoneNumber(input)
     if input.gsub(/\D/, "").match(/^1?(\d{3})(\d{3})(\d{4})/)
       result = [$1, $2, $3].join("")
-      return result.to_i
+      return result
     end
   end 
 
