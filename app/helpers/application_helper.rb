@@ -22,14 +22,5 @@ module ApplicationHelper
 	 	return result = [date, time]
 	end 
 
-	def getPrice(user)
-	    if user.tokens >= 1
-	      price = 45
-	    else
-	      price = 50
-	    end 
-	    return price
-  	end 
-
 	
 end

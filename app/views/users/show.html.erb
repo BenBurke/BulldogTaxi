@@ -9,9 +9,11 @@
 	      <b>College:</b> <%= @user.college %> <br/><br/>
 	      <% if @user.trips.first != nil %>
 		      <% if @user.trips.first.payment_status == true %>
-		      <b>Promotional Code:</b> <%= @user.promo_code %> <br/><br><br>
+		      <b>Promotional Code:</b> <%= @user.promo_code %> <br/>
 		      <% end %>
 		  <% end %>
+
+		  <b> Money saved to date: </b> $<%= @user.trip_count*70%>.00<br><br><br>
 
 	      <div class="center">
 	      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>

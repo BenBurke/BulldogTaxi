@@ -3,7 +3,6 @@
 		</div>
 		<div class='span4 hero-unit center'>
 			<%= form_for @user, :html => {:multipart => true} do |f| %>
-					<%= f.file_field :image %>
 
 					<%= label_tag :first_name, "First name:" %>
 		  		<%= text_field_tag :first_name %>
@@ -11,8 +10,8 @@
 		  		<%= label_tag :last_name, "Last name:" %>
 		  		<%= text_field_tag :last_name %>
 
-				  <%= f.label "Yale email:" %>
-				  <%= f.text_field :email %>
+					<%= f.label "Yale email:" %>
+					<%= f.text_field :email %>
 
 				  <%= f.label "Phone Number:" %>
 				  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
