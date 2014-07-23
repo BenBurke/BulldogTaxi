@@ -18,9 +18,9 @@
 		  <%= f.label "Phone number:" %>
 		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
-		  <% unless @user.trips.count >= 1 %>
-		  <%= label_tag "Promotional Code:" %>
-		  <%= text_field_tag :parent_code,nil, placeholder: "123ABC" %>
+		  <% if @user.parent_id == nil %>
+			  <%= label_tag "Promotional Code:" %>
+			  <%= text_field_tag :parent_code,nil, placeholder: "123ABC" %>
 		  <% end %> 
 
 		  <%= hidden_field_tag :page, "form" %>
