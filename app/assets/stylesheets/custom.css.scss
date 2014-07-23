@@ -36,7 +36,7 @@ textarea {
 }
 
 .cover {
-  background-image: url(asset_url('bdt_logo.jpg', image));
+  background-image: image-url('bdt_logo.jpg');
 	-webkit-background-size: cover;
 	min-height: 500px;
 	background-size: cover;
@@ -75,7 +75,7 @@ body {
 
 	-webkit-background-size: cover;
 	background-size: cover;
-  background-image: url( <%= asset_path('background_pattern.png') %> );
+  background-image: image-url('background_pattern.png');
 }
 
 @mixin box_sizing {
