@@ -64,7 +64,7 @@ textarea {
   background-color: white;
   border-style: solid;
   border-width: 12px;
-  border-color: rgb(15, 77, 146);
+  border-color: rgb(00, 66, 99);
   border-radius: 10px;
 }
 .container {
@@ -72,8 +72,10 @@ textarea {
 }
 
 body {
-  color: rgb(15, 77, 146);
-
+  color: rgb(00, 66, 99);
+	-webkit-background-size: cover;
+	background-size: cover;
+  background-image: image-url('background_pattern-1.png');
 }
 
 @mixin box_sizing {
@@ -108,7 +110,7 @@ body {
 }
 
 footer {
-  background-color: rgb(15, 77, 146);
+  background-color: rgb(00, 66, 99);
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
@@ -139,6 +141,6 @@ footer ul {
 
 .navbar-inner {
   background-image: none;
-  background-color: rgb(15, 77, 146);
+  background-color: rgb(00, 66, 99);
   border: 0px
 }
