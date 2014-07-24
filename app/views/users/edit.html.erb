@@ -1,32 +1,28 @@
-<div class='row'>
-	<div class='span4'>
-		</div>
-		<div class='span4 hero-unit center'>
-			<%= form_for @user, :html => {:multipart => true} do |f| %>
+<div class="main-content container">
+	<div class='span7 hero-compress hero-unit center' id="hacky">
+		<%= form_for @user, :html => {:multipart => true} do |f| %>
 
-					<%= f.label :fname, "First name:" %>
-				  <%= f.text_field :fname %>
+				<%= f.label :fname, "First name:" %>
+			  <%= f.text_field :fname %>
 
-				  <%= f.label :lname, "Last name:" %>
-				  <%= f.text_field :lname %>
+			  <%= f.label :lname, "Last name:" %>
+			  <%= f.text_field :lname %>
 
-					<%= f.label "Yale email:" %>
-					<%= f.text_field :email %>
+				<%= f.label "Yale email:" %>
+				<%= f.text_field :email %>
 
-				  <%= f.label "Phone Number:" %>
-				  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
+			  <%= f.label "Phone Number:" %>
+			  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
-				  <%= f.label "Yale Class Year:" %>
-				  <%= f.number_field :year %>
+			  <%= f.label "Yale Class Year:" %>
+			  <%= f.number_field :year %>
 
-				  <%= f.label "Residential College:" %>
-				  <%= f.text_field :college, placeholder: 'Your College' %>
+			  <%= f.label "Residential College:" %>
+			  <%= f.text_field :college, placeholder: 'Your College' %>
 
-				  <%= hidden_field_tag :page, "edit" %>
+			  <%= hidden_field_tag :page, "edit" %><br><br>
 
-				  <%= f.submit "Update", class: "btn btn-large btn-primary" %>
-			<% end %>
-		</div>
-		<div class='span4'>
+			  <%= f.submit "Update", class: "btn btn-large btn-primary" %>
+		<% end %>
 	</div>
 </div>
