@@ -18,3 +18,24 @@
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
 //= require bootstrap
+
+$(document).ready(function(){
+	var div = $('#hacky');
+		var divWidth = div.outerWidth();
+		var parentWidth = div.parent().width();
+		var marginWidth = (parentWidth - divWidth) / 2;
+		div.css({
+			marginLeft: marginWidth,
+			marginRight: marginWidth
+		});
+	$(window).resize(function(e){
+		var div = $('#hacky');
+		var divWidth = div.outerWidth();
+		var parentWidth = div.parent().width();
+		var marginWidth = (parentWidth - divWidth) / 2;
+		div.css({
+			marginLeft: marginWidth,
+			marginRight: marginWidth
+		});
+	});
+});

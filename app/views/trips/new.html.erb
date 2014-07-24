@@ -1,10 +1,6 @@
-<div class="container">
-	<div class="center row">
-		<h1>Flight Information </h1>
-	</div>	
-	<div class='span4'>
-	</div>
-	<div class='hero_compress span4 hero-unit center'>
+<div class="container main-content">
+	<div id="hacky" class='hero_compress span8 hero-unit center'>
+		<h3>Flight Information </h3>
 	<%= form_for @trip do |f| %>
 		<p>
 			<%= label_tag :arrival_date, "Arrival Date:" %>
@@ -37,6 +33,4 @@
 			<p>*Flight number allows us to track your flight and better serve you in case of flight delays.</p>
 		</div>
 	</div>
-	<div class='span4'>
-	</div>
-</div>
+<!-- </div> -->
