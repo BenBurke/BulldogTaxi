@@ -1,34 +1,28 @@
-<div class="container">
-	<div class="center row">
-		<h1> Step 1: User Information </h1>
-	</div>	
-	<div class='span4'>
-	</div>
-	<div class='span4 hero-unit center'>
-		<%= form_for @user do |f| %>
-			<%= f.label :fname, "First name:" %>
-		  <%= f.text_field :fname %>
+<div class="container main-content">
+	<div class='span7 hero-unit center' id="hacky">
+			<h3> Step 1: User Information </h3>
+			<%= form_for @user do |f| %>
+				<%= f.label :fname, "First name:" %>
+			  <%= f.text_field :fname %>
 
-		  <%= f.label :lname, "Last name:" %>
-		  <%= f.text_field :lname %>
+			  <%= f.label :lname, "Last name:" %>
+			  <%= f.text_field :lname %>
 
-		  <%= f.label "Yale email:" %>
-		  <%= f.text_field :email %>
+			  <%= f.label "Yale email:" %>
+			  <%= f.text_field :email %>
 
-		  <%= f.label "Phone number:" %>
-		  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
+			  <%= f.label "Phone number:" %>
+			  <%= f.text_field :phone_number, placeholder: "617 867 5309" %>
 
-		  <% if @user.parent_id == nil %>
-			  <%= label_tag "Promotional Code:" %>
-			  <%= text_field_tag :parent_code,nil, placeholder: "123ABC" %>
-		  <% end %> 
+			  <% if @user.parent_id == nil %>
+				  <%= label_tag "Promotional Code:" %>
+				  <%= text_field_tag :parent_code,nil, placeholder: "123ABC" %>
+			  <% end %> 
 
-		  <%= hidden_field_tag :page, "form" %>
-		  <%= f.hidden_field :promo_code, value: (@user.id + 137).to_s + (65+rand(25)).chr + (65+rand(25)).chr + (65+rand(25)).chr %>
+			  <%= hidden_field_tag :page, "form" %>
+			  <%= f.hidden_field :promo_code, value: (@user.id + 137).to_s + (65+rand(25)).chr + (65+rand(25)).chr + (65+rand(25)).chr %> <br><br>
 
-		  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
-	<div class='span4'>
+			  <%= f.submit "Next", class: "btn btn-large btn-primary" %>
+			<% end %>
 	</div>
 </div>
