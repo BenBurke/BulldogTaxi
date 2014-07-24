@@ -35,7 +35,7 @@ class ChargesController < ApplicationController
 
     if charge.paid == true
       @trip.update_attributes(payment_status: true)
-      flash.now[:success] = "Payment processed! Thanks " + @user.name.split(" ")[0] + ", you should receive a confirmation email shortly."
+      flash.now[:success] = "Payment processed! Thanks " + @user.fname + ", you should receive a confirmation email shortly."
       @tokens = @user.tokens
       @trip_count = @user.trip_count + 1
       @user.update_attributes(trip_count: @trip_count)

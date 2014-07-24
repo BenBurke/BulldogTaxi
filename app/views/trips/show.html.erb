@@ -4,7 +4,7 @@
 	<div class="hero-unit span8 left">
 		<h2> Trip from <%= @flight.departure_airport %> to <%= @flight.arrival_airport %> </h2>
 		<h3>User:</h3>
-			<b>Name:</b> <%= @user.name %> <br>
+			<b>Name:</b> <%= @user.fname + " " + @user.lname %> <br>
 			<b>Email:</b> <%= @user.email %> <br>
 			<b>Phone:</b> <%= @user.phone_number %> <br/>
 			<b>NetID:</b> <%= @user.netid %> <br/>

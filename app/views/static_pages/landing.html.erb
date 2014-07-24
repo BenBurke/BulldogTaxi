@@ -16,7 +16,7 @@
 			<div class="row">
 				<h2> Create a Trip! </h2>
 				<h3>Dates of Operation: <b> August 20-24, 8am - 8pm</b>.</h3>
-					<% if @signedin && User.find_by(netid: session[:cas_user]).name != nil %>
+					<% if @signedin && User.find_by(netid: session[:cas_user]).fname != nil %>
 						<%= link_to "Bradley to Yale!", new_trip_path, class: "btn btn-large btn-primary" %>
 					<% else %>
 						<%= link_to "Bradley to Yale!", new_user_path, class: "btn btn-large btn-primary" %>

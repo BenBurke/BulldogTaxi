@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723171102) do
+ActiveRecord::Schema.define(version: 20140724154135) do
 
   create_table "airports", force: true do |t|
     t.string   "name"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20140723171102) do
   add_index "trips", ["user_id"], name: "index_trips_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "name"
     t.string   "email"
     t.string   "college"
     t.integer  "year"
@@ -82,6 +81,8 @@ ActiveRecord::Schema.define(version: 20140723171102) do
     t.integer  "tokens",       default: 0
     t.integer  "trip_count",   default: 0
     t.string   "phone_number"
+    t.string   "fname"
+    t.string   "lname"
   end
 
   add_index "users", ["parent_id"], name: "index_users_on_parent_id"

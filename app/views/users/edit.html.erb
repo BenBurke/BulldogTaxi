@@ -4,11 +4,11 @@
 		<div class='span4 hero-unit center'>
 			<%= form_for @user, :html => {:multipart => true} do |f| %>
 
-					<%= label_tag :first_name, "First name:" %>
-		  		<%= text_field_tag :first_name %>
+					<%= f.label :fname, "First name:" %>
+				  <%= f.text_field :fname %>
 
-		  		<%= label_tag :last_name, "Last name:" %>
-		  		<%= text_field_tag :last_name %>
+				  <%= f.label :lname, "Last name:" %>
+				  <%= f.text_field :lname %>
 
 					<%= f.label "Yale email:" %>
 					<%= f.text_field :email %>

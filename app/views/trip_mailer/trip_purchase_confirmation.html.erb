@@ -1,4 +1,4 @@
-<h2> Trip Confirmation for <%= @user.name %> </h2>
+<h2> Trip Confirmation for <%= @user.fname + " " + @user.lname %> </h2>
 
   <h2>Thanks for riding with Bulldog Taxi!</h2>
   <p>Using our service is easy. We'll wait for you at Bradley between doors 2 and 3, near baggage claim. In the meantime, update your profile, like us on facebook, and share your promo code with other Yale travellers!</p>
@@ -7,7 +7,7 @@
        <h3> Paid: $<%= @price %>.00</h3>
 
       <h3>Trip For:</h3>
-        <b>Name:</b> <%= @user.name %> <br>
+        <b>Name:</b> <%= @user.fname + " " + @user.lname %> <br>
         <b>Email:</b> <%= @user.email %> <br>
         <b>Phone:</b> <%= @user.phone_number %> <br/>
         <b>NetID:</b> <%= @user.netid %> <br/>

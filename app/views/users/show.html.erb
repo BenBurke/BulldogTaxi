@@ -1,6 +1,6 @@
 <div class="row">
 	<div class= "hero-unit left span5" id="user_info">
-	    <h3><%= @user.name %></h3>
+	    <h3><%= @user.fname + " " + @user.lname%></h3>
 	    	<%= image_tag @user.image_url.to_s %>
 	      <b>Email:</b> <%= @user.email %> <br>
 	      <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>

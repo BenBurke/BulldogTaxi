@@ -7,7 +7,7 @@
         <h2> Review Trip and Pay </h2>
           <%= link_to "Edit", edit_trip_path(@trip), class: "btn-primary btn-large pull-right" %>
         <h3>User:</h3>
-          <b>Name:</b> <%= @user.name %> <br>
+          <b>Name:</b> <%= @user.fname + " " + @user.lname %> <br>
           <b>Email:</b> <%= @user.email %> <br>
           <b>phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
         <h3>Flight:</h3>
