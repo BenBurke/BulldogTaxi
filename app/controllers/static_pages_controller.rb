@@ -1,10 +1,13 @@
 class StaticPagesController < ApplicationController
 	
-		def skip_login?
-			true
-		end
+	def skip_login?
+		true
+	end
+
 	def landing
-  	end
+    render layout: false
+  end
+
   def about
   end
 
