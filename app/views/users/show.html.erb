@@ -1,16 +1,16 @@
 <div class="main-content container">
 	<div id="hacky">
 		<div class= "hero-unit left span7" id="user_info">
-		    <h3><%= @user.fname + " " + @user.lname%></h3>
+		    <h2><%= @user.fname + " " + @user.lname%></h2>
 		    	<%= image_tag @user.image_url.to_s %>
-		      <b>Email:</b> <%= @user.email %> <br>
+		      <small><b>Email:</b> <%= @user.email %> <br>
 		      <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
 		      <b>NetID:</b> <%= @user.netid %> <br/>
 		      <b>Class Year:</b> <%= @user.year %> <br/>
 		      <b>College:</b> <%= @user.college %> <br/><br/>
 		      <% if @user.trips.first != nil %>
 			      <% if @user.trips.first.payment_status == true %>
-			      <b>Promotional Code:</b> <%= @user.promo_code %> <br/>
+			      <b>Promotional Code:</b> <%= @user.promo_code %></small> <br/>
 			      <% end %>
 			  <% end %>
 
@@ -20,19 +20,20 @@
 		      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
 					</div>
 		</div>
-		<div class="hero-unit left span9">
-			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
+		<div class="hero-unit left span9" id="trip_history">
 				<h2> Trip History:</h2>
-			<div class="span" id="trip_history">
+			<div class="span">
 				<% @trips.each do |trip| %>
 					<% if trip.payment_status == true %>
 						<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport.split(" ")[0] + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
-						<%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %><br>
+						<small><%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %><br>
 						Confirmation Number: <%= trip.confirmation %><br>
-						Flight Number: <%= trip.flight_number %>
-						
+						Flight Number: <%= trip.flight_number %></small>
 					<% end %>	
 				<% end %>
+				<div class="center">
+			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
+			</div>
 			</div>
 		</div>
 	</div>
