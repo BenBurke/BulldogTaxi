@@ -121,7 +121,7 @@
                     <p class="lead">Bulldog Taxi works by matching you with other Yale student travelers. Just land, collect your luggage, and meet us at the airport to pick up your prepaid fare card. If you ever wait more than an hour, your ride is half-price.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <%= image_tag('bdt_logo2.jpg', size: "480x300") %>
+                    <%= image_tag('bdt_logo2.jpg', class: "img-responsive img-circle") %>
                 </div>
             </div>
 
@@ -129,51 +129,55 @@
         <!-- /.container -->
 
     </div>
-    <!-- /.content-section-a -->
-
-    <div class="content-section-b">
-
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
         <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Patrick Casey,<br> Saybrook College '15</h2>
-                    <p class="lead">I am an econ major and a rising senior in Saybrook College. I'm active in Saybrook College Council, the Senior Class Council, and the Yale Student Investment Group. As a regular traveler through Bradley, I've spent more than a few miserable hours waiting for the bus. I hope that you'll try Bulldog Taxi to ride to Yale in comfort.</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <%= image_tag('patrick_founder_photo.jpg', size: "320x350") %>
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"> Meet Your Team Members</h2>
+                    <h3 class="section-subheading text-muted">Created by YEI Tech-Bootcamp Fellows:</h3>
                 </div>
             </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Ben Burke,<br> Pierson College '15</h2>
-                    <p class="lead">I am an Chemical Engineering major and a rising senior in Pierson College. In addition to Bulldog Taxi, I am one of the captains of the club hockey team, a FOOT leader, an AYA liason to Pierson, and an active member of Pierson College life including Intramurals and the Housing Committee. I can't wait to see you all in the Fall. </p>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <%= image_tag('patrick_founder_photo.jpg', class: "img-responsive img-circle border") %>
+                        <h4>Patrick Casey</h4>
+                        <p class="text-muted">Saybrook '15</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                   <%= image_tag('ben_founder_photo.jpg', size: "320x350") %>
+                <div class="col-sm-4">
+                 <p class="lead"><small>I am an econ major and a rising senior in Saybrook College. I'm active in Saybrook College Council, the Senior Class Council, and the Yale Student Investment Group. As a regular traveler through Bradley, I've spent more than a few miserable hours waiting for the bus. I hope that you'll try Bulldog Taxi to ride to Yale in comfort.</small></p>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <%= image_tag('ben_founder_photo.jpg',class: "img-responsive img-circle border") %>
+                        <h4>Benjamin Burke </h4>
+                        <p class="text-muted">Pierson '15</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                <p class="lead"><small>I am an Chemical Engineering major and a rising senior in Pierson College. In addition to Bulldog Taxi, I am one of the captains of the club hockey team, a FOOT leader, an AYA liason to Pierson, and an active member of Pierson College life including Intramurals and the Housing Committee. I can't wait to see you all in the Fall.</small> </p>
                 </div>
             </div>
-
         </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
+    </section>
 
     <div class="banner">
 
@@ -194,16 +198,15 @@
                         <li>
                             <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
+
                     </ul>
                 </div>
             </div>
 
         </div>
         <!-- /.container -->
-
     </div>
     <!-- /.banner -->
-
     <!-- Footer -->
     <footer>
         <div class="container">

@@ -1,6 +1,6 @@
 <div class="main-content container">
 	<div id="hacky">
-		<div class= "hero-unit left span7" id="user_info">
+		<div class= "hero-unit left span5" id="user_info">
 		    <h3><%= @user.fname + " " + @user.lname%></h3>
 		    	<%= image_tag @user.image_url.to_s %>
 		      <b>Email:</b> <%= @user.email %> <br>
@@ -20,7 +20,7 @@
 		      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
 					</div>
 		</div>
-		<div class="hero-unit left span9">
+		<div class="hero-unit left span7">
 			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
 				<h2> Trip History:</h2>
 			<div class="span" id="trip_history">
