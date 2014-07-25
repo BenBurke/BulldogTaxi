@@ -12,8 +12,8 @@
           <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
         <h3>Flight:</h3>
           <b>flight number:</b> <%= @trip.flight_number %> <br>
-          <b>Departure Airport:</b> <%= @flight.departure_airport %><br>
-          <b>Arrival Aiport:</b> <%= @flight.arrival_airport %><br>
+          <b>Departing From:</b> <%= @flight.departure_airport %><br>
+          <b>Arriving To:</b> <%= @flight.arrival_airport %><br>
           <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
           <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
           <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
