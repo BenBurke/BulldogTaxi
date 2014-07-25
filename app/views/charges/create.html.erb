@@ -1,15 +1,8 @@
 <div class="container main-content">
-  <div class= "hero-unit center span8" id="hacky">
-        <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
-       <h3> Paid: $<%= @price %>.00 </h3>
-      <h2> Trip Receipt <br><small><b>Thanks for riding with Bulldog Taxi! We've sent you a confirmation email.</b>
-        <ul>
-          <li> Meet us at Bradley. We'll be between doors 2 and 3, near baggage claim </li>
-          <li> View your trip any time at your <b><%=link_to "profile page", @user %></b>. </li>
-          <li> Update your <b><%=link_to "profile page", @user %></b> to improve our matching algorithm. </li>
-        </ul>
-      </small> </h2>
-
+  <div class= "hero-unit center span7" id="Receipt">
+      <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
+      <h3> Paid: $<%= @price %>.00 </h3>
+      <h2> Trip Receipt <br><small><b>Thanks for riding with Bulldog Taxi! We've sent you a confirmation email.</b></small>
       <h3>Trip For:</h3>
         <b>Name:</b> <%= @user.fname + " " + @user.lname%> <br>
         <b>Email:</b> <%= @user.email %> <br>
@@ -23,8 +16,18 @@
         <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
         <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
 
-      <h5> Promotional Code: </h5> <%= @user.promo_code %> <br> <small>Share this code with your friends! If someone else signs up with your promotional code, they will get a discount on their ride and you will get cash back at the airport.</small>
-
+  
 
   </div>
+  <div class="hero-unit span7" id="Next_steps">
+      <h3> Promotional Code: </h3> <h4><em><%= @user.promo_code %></em></h4> <br> <p>Share this code with your friends! If someone else signs up with your promotional code, they will get a discount on their ride and you will get a discount on a future trip.<br><br>
+        <ul>
+          <li> Meet us at Bradley. We'll be between doors 2 and 3, near baggage claim </li>
+          <li> View your trip any time at your <b><%=link_to "profile page", @user %></b>. 
+          </li>
+          <li> Update your <b><%=link_to "profile page", @user %></b> to improve our matching algorithm. You can update your class year and college so that we can potentially match you with friends you never knew were at the airport!
+           </li>
+        </ul>
+      </p>
+      <h4> It's that easy! We will see you in the Airport. Please contact us with any questions or concerns. </h4>
 </div>
