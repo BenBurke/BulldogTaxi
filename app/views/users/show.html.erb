@@ -23,14 +23,20 @@
 		<div class="hero-unit left span9" id="trip_history">
 				<h2> Trip History:</h2>
 			<div class="span">
+				<% if @trips != nil %>
 				<% @trips.each do |trip| %>
 					<% if trip.payment_status == true %>
-						<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport.split(" ")[0] + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+						<% if trip.flight.departure_airport == nil %>
+							<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+						<% else %>
+						<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+						<% end %>
 						<small><%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %><br>
 						Confirmation Number: <%= trip.confirmation %><br>
 						Flight Number: <%= trip.flight_number %></small>
 					<% end %>	
 				<% end %>
+				<%end %>
 				<div class="center">
 			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
 			</div>
