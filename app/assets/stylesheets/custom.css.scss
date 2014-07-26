@@ -86,6 +86,38 @@ textarea {
   background-size: cover;
 }
 
+/*Images for background*/
+
+#flight_info{
+  background-image: image-url("beinecke-inner.jpg");
+  background-size: cover;
+  /* this is for new_trip*/
+}
+#edit_trip{
+  background-image: image-url("yalebowl.jpg");
+  background-size: cover;
+}
+
+#new_charge{
+  background-image: image-url("woolsey.jpg");
+  background-size: cover;
+}
+.low-opacity{
+    opacity: .8;
+}
+#create_charge{
+  background-image: image-url("beinecke-full.jpg");
+  background-size: cover;
+}
+
+#user_show{
+  background-image: image-url("beinecke-grey.jpg");
+  background-size: cover;
+}
+#user_edit{
+  background-image: image-url("oldschoololdcampus.jpg");
+  background-size: cover;
+}
 body {
   color: rgb(00, 66, 99);
 	-webkit-background-size: cover;
