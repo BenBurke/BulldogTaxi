@@ -22,7 +22,11 @@
         <article>
           <label class="amount">
             <span>
-              <h3>Amount: $<%= @price %>.00</h3>
+              <h3>Total Cost: $50.00 <br>
+                  <% if (50 - @price) != 0 %>
+                  Discounts: $<%= 50 - @price %>.00 <br>
+                  Final Price: $<%= @price %>.00</h3>
+                  <% end %>
             </span>
           </label>
         </article>

@@ -65,6 +65,10 @@ class TripsController < ApplicationController
     @airports = Airport.all
 	end
 
+	def index
+		@flights = sortFlights(Flight.all)
+	end 
+
 	def buildDateTime(date, time)
 		date = date.split("/")
 		date.push(date[0])
@@ -75,6 +79,10 @@ class TripsController < ApplicationController
 		time = time.join(" ")
 		datetime = date + " " + time
         datetime.to_datetime
+	end 
+
+	def sortFlights(flights)
+		flights.sort_by {|arrival| arrival[:arrival_datetime]}
 	end 
 
 
