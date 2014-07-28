@@ -5,7 +5,7 @@
 	<div class="hero-unit span5" id="hacky">
 		<% @flights.each do |flight| %>
 			<%= flight.arrival_datetime %><br>
-			<small><%=Trip.find(flight.trip_id).id%> <br>
+			<small><%=Trip.find(flight.trip_id).confirmation%> <br>
 					<%= Trip.find(flight.trip_id).user.fname %><br>
 			</small>
 		<% end %>
