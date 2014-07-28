@@ -9,7 +9,7 @@
 		      <b>Class Year:</b> <%= @user.year %> <br/>
 		      <b>College:</b> <%= @user.college %> <br/><br/>
 		      <% if @user.trips.first != nil %>
-			      <% if @user.trips.first.payment_status == true %>
+			      <% if @user.trip_count != 0 %>
 			      <b>Promotional Code:</b> <%= @user.promo_code %></small> <br/>
 			      <% end %>
 			  <% end %>
@@ -36,7 +36,7 @@
 						Flight Number: <%= trip.flight_number %></small>
 					<% end %>	
 				<% end %>
-				<%end %>
+				<% end %>
 				<div class="center">
 			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
 			</div>
