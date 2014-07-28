@@ -1,8 +1,8 @@
 <div class="main-content container">
-	<div class="hero-unit" id="hacky">
-	<div class="pull-left row">
+	<div class="hero-unit pull-left row">
 		<%= @flights.count %>
 	</div>
+	<div class="hero-unit span5" id="hacky">
 		<% @flights.each do |flight| %>
 			<%= flight.arrival_datetime %><br>
 			<small><%=Trip.find(flight.trip_id).id%> <br>
