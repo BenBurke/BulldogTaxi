@@ -4,10 +4,12 @@
 	</div>
 	<div class="hero-unit span5" id="hacky">
 		<% @flights.each do |flight| %>
+			<% if flight.trip.payment_status == true %>
 			<%= flight.arrival_datetime %><br>
-			<small><%=Trip.find(flight.trip_id).confirmation%> <br>
-					<%= Trip.find(flight.trip_id).user.fname %><br>
+			<small><%=flight.trip.confirmation%> <br>
+					<%= flight.trip.user.fname %><br>
 			</small>
+			<% end %>
 		<% end %>
 	</div>
 </div>
