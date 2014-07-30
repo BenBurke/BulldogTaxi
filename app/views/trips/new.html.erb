@@ -1,6 +1,9 @@
 <div class="container main-content" id="flight_info">
 	<div id="hacky" class='hero_compress span8 hero-unit center'>
 		<h3>Flight Information </h3>
+		<p> Operational Dates: August 20 - 23 <br>
+		Operational Times: 9am - 8pm</p> 
+
 	<%= form_for @trip do |f| %>
 		<p>
 			<%= label_tag :arrival_date, "Arrival Date:" %>
@@ -27,7 +30,7 @@
 			<%= f.hidden_field :confirmation, value: "BDT-" + rand(1000..9999).to_s %>
 
 		</p>
-			<p><%= f.submit "submit", class: "btn btn-primary btn-large" %> </p>
+			<p><%= f.submit "submit", class: "btn btn-primary btn-large", id: "tripbutton"%> </p>
 		<% end %>
 		<div id="trip_form_footer" class="row pull-left">
 			<p>*Flight number allows us to track your flight and better serve you in case of flight delays.</p>

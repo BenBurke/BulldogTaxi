@@ -11,3 +11,16 @@ $(document).ready(function(){
     $(".trip_arrival_time").timepicker("showWidget");
   });
 });
+
+$( document ).ready(function() {
+   $("#tripbutton").click(function(event) {
+    var arrival_date = $("#arrival_date").val();
+    var arrival_time = $("#arrival_time").val();
+    if (arrival_date) {
+      console.log(arrival_date);
+    } else {
+      console.log(arrival_time);
+      alert("Please Pick a valid Date");
+      event.preventDefault();}
+  });
+});

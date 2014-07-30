@@ -2,6 +2,9 @@
 	<div class='span7 hero-unit center' id="hacky">
 			<h3> Step 1: User Information </h3>
 			<%= form_for @user do |f| %>
+				
+				<%= render 'shared/error_messages' %>
+
 				<%= f.label :fname, "First name:" %>
 			  <%= f.text_field :fname %>
 
