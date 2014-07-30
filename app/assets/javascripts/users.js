@@ -7,22 +7,22 @@ $( document ).ready(function() {
     if (fname) {
       console.log(fname);
     } else {
-      alert("Please provide a your first name");
+      alert("Please provide your first name");
       event.preventDefault();}
       if (lname) {
       console.log(lname);
     } else {
-      alert("Please provide a your last name");
+      alert("Please provide your last name");
       event.preventDefault();}
       if (email) {
       console.log(email);
     } else {
-      alert("Please provide a your Yale email");
+      alert("Please provide your Yale email");
       event.preventDefault();}
       if (phoneNumber) {
       console.log(phoneNumber);
     } else {
-      alert("Please provide a your phone number");
+      alert("Please provide your phone number");
       event.preventDefault();}
   });
 });
