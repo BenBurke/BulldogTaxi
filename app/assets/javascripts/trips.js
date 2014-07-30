@@ -16,11 +16,26 @@ $( document ).ready(function() {
    $("#tripbutton").click(function(event) {
     var arrival_date = $("#arrival_date").val();
     var arrival_time = $("#arrival_time").val();
+    var hour = arrival_time.split(":")[0];
+    var am_pm = arrival_time.split(" ")[1];
     if (arrival_date) {
-      console.log(arrival_date);
+      // console.log(arrival_date);
     } else {
-      console.log(arrival_time);
-      alert("Please Pick a valid Date");
+      alert("Please pick a valid date. Our operational dates are August 20-23.");
       event.preventDefault();}
+    if (am_pm === "AM") {
+      if (hour < 8){
+        alert("Please select a later time, the earliest option is 8:00 AM");
+        event.preventDefault();
+      }
+    } else {
+      if (hour >= 8){
+        alert("Please select an earlier time, the latest option is 7:30 PM");
+        event.preventDefault();
+      }
+    }
+      // console.log(am_pm);
+      // console.log(hour);
+      // event.preventDefault();
   });
 });
