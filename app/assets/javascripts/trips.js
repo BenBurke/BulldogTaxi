@@ -22,29 +22,40 @@ $( document ).ready(function() {
     var am_pm = arrival_time.split(" ")[1];
     if (arrival_date) {
       if (month === "08"){
-        if (day >= 20 && day <= 23){}
+        if (day >= 20 && day <= 23){
+          $("#arrival_date").css({ borderColor: '#cccccc' });
+        }
         else {
           alert("Please pick a valid date. Our operational dates are August 20-23.");
+          $("#arrival_date").css({ borderColor: 'Red' });
           event.preventDefault();
         }
       } else {
           alert("Please pick a valid date. Our operational dates are August 20-23.");
+          $("#arrival_date").css({ borderColor: 'Red' });
           event.preventDefault();
       }
       // console.log(arrival_date);
     } else {
       alert("Please pick a valid date. Our operational dates are August 20-23.");
+      $("#arrival_date").css({ borderColor: 'Red' });
       event.preventDefault();
     }
     if (am_pm === "AM") {
       if (hour < 8){
         alert("Please select a later time, the earliest option is 8:00 AM");
+        $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();
+      } else {
+        $("#arrival_time").css({ borderColor: '#cccccc' });
       }
     } else {
       if (hour >= 8){
         alert("Please select an earlier time, the latest option is 7:30 PM");
+        $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();
+      } else {
+        $("#arrival_time").css({ borderColor: '#cccccc' });
       }
     }
       // console.log(am_pm);
