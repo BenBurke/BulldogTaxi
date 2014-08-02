@@ -1,22 +1,37 @@
 <footer class="footer">
   <div class="row footer">	
-	<div class="pull-right" id="facebook">
-		<div class="row">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bulldogtaxi.herokuapp.com" data-hashtags="BulldogTaxi">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<div class="pull-right" id="facebook">
+			<div class="row">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bulldogtaxi.herokuapp.com" data-hashtags="BulldogTaxi">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
+			<div class="row">
+				 <div
+		              class="fb-like"
+		              data-send="true"
+		              data-layout="button_count"
+		              data-width="450"
+		              data-show-faces="true">
+		          </div>
+			</div>
 		</div>
-		<div class="row">
-			 <div
-	              class="fb-like"
-	              data-send="true"
-	              data-layout="button_count"
-	              data-width="450"
-	              data-show-faces="true">
-	          </div>
-		</div>
-	</div>
-	  <nav>
+
 	   	<ul>Contact us at bulldogtaxirides@gmail.com</ul>
-	  </nav>
+                    <ul class="list-inline">
+                        <li>
+                            <%= link_to "Home", :root %>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <% if @signedin && User.find_by(netid: session[:cas_user]).fname != nil %>
+                            <li><%= link_to "Create Trip", new_trip_path %></li>
+                        <% else %>
+                            <li><%= link_to "Create Trip", new_user_path %></li>
+                        <% end %>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li> <%= link_to "Refunds & Policies", policy_path %></li>
+                    </ul>
 	</div>
+	<div class="span center">
+     <p class="pull-center copyright text-muted small">Copyright &copy; Bulldog Taxi 2014. All Rights Reserved</p>
+  </div>
 </footer>
