@@ -29,23 +29,27 @@ $( document ).ready(function() {
           alert("Please pick a valid date. Our operational dates are August 20-23.");
           $("#arrival_date").css({ borderColor: 'Red' });
           event.preventDefault();
+          return;
         }
       } else {
           alert("Please pick a valid date. Our operational dates are August 20-23.");
           $("#arrival_date").css({ borderColor: 'Red' });
           event.preventDefault();
+          return;
       }
       // console.log(arrival_date);
     } else {
       alert("Please pick a valid date. Our operational dates are August 20-23.");
       $("#arrival_date").css({ borderColor: 'Red' });
       event.preventDefault();
+      return;
     }
     if (am_pm === "AM") {
       if (hour < 8){
         alert("Please select a later time, the earliest option is 8:00 AM");
         $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();
+        return;
       } else {
         $("#arrival_time").css({ borderColor: '#cccccc' });
       }
@@ -54,9 +58,17 @@ $( document ).ready(function() {
         alert("Please select an earlier time, the latest option is 7:30 PM");
         $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();
+        return;
       } else {
         $("#arrival_time").css({ borderColor: '#cccccc' });
       }
+    }
+    if ($("#agreement").is(':checked')){
+    } else {
+     alert("Trip cannot be processed until you confirm the consent agreement");
+     $("#agreement_text").css({ color: 'Red' });
+      event.preventDefault();
+      return;
     }
       // console.log(am_pm);
       // console.log(hour);

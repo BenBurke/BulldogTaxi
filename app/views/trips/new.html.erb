@@ -27,7 +27,7 @@
 			<%= f.label :flight_number, "Flight Number (optional):*" %>
 			<%= f.text_field :flight_number, placeholder: "7777" %>
 
-			<div class="checkbox">
+			<div class="checkbox" id="agreement_text">
 				<%= check_box_tag :agreement %>
 				<small>You agree that you have read the <br> <%= link_to "Policies", policy_path %> "regarding cancellations, refunds, and risk."</small>
 			</div>
