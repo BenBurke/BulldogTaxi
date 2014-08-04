@@ -66,7 +66,12 @@ class TripsController < ApplicationController
 	end
 
 	def index
-		@flights = sortFlights(Flight.all)
+		@user = User.find_by(netid: session[:cas_user])
+		if @user.netid == 'bwb28' || @user.netid == 'pwc32'	
+			@flights = sortFlights(Flight.all)
+		else
+			redirect_to :root
+		end 
 	end 
 
 	def buildDateTime(date, time)
