@@ -62,7 +62,7 @@ class TripsController < ApplicationController
 		@user = User.find(@trip.user_id)
 		@flight = @trip.flight
 		@carriers = Carrier.all
-    @airports = Airport.all
+    	@airports = Airport.all
 	end
 
 	def index

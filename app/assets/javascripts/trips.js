@@ -45,7 +45,7 @@ $( document ).ready(function() {
       return;
     }
     if (am_pm === "AM") {
-      if (hour < 8){
+      if (hour < 8 || hour === "12"){
         alert("Please select a later time, the earliest option is 8:00 AM");
         $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();
@@ -54,7 +54,7 @@ $( document ).ready(function() {
         $("#arrival_time").css({ borderColor: '#cccccc' });
       }
     } else {
-      if (hour >= 8){
+      if (hour >= 8 && hour < 12){
         alert("Please select an earlier time, the latest option is 7:30 PM");
         $("#arrival_time").css({ borderColor: 'Red' });
         event.preventDefault();

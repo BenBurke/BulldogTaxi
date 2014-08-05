@@ -13,7 +13,9 @@ module ApplicationHelper
 	 	time = datetime.strftime("%H:%M").split(":")
 	 	hour = time[0].to_i
 	 	if hour >= 12
-	 		time[0] = (hour - 12).to_s
+	 		if hour > 12
+	 			time[0] = (hour - 12).to_s
+	 		end
 	 		time = time.join(":") + " PM"
 	 	else 
 	 		time = time.join(":") + " AM"
