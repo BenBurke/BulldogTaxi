@@ -1,6 +1,7 @@
 <div class="main-content container">
 	<div class="hero-unit pull-left row">
 		<%= @flights.count %>
+		<%= @user.tokens %>
 	</div>
 	<div class="hero-unit span5" id="hacky">
 		<% @flights.each do |flight| %>
