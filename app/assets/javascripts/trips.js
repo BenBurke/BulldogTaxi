@@ -17,10 +17,17 @@ $( document ).ready(function() {
     var arrival_date = $("#arrival_date").val();
     var month = arrival_date.split("/")[0];
     var day = arrival_date.split("/")[1];
+    var year = arrival_date.split("/")[2];
     var arrival_time = $("#arrival_time").val();
     var hour = arrival_time.split(":")[0];
     var am_pm = arrival_time.split(" ")[1];
     if (arrival_date) {
+      if (year != 2014) {
+        alert("Please make sure the year selected is 2014. Our operational dates are August 20-23.");
+          $("#arrival_date").css({ borderColor: 'Red' });
+          event.preventDefault();
+          return; 
+      }
       if (month === "08"){
         if (day >= 20 && day <= 23){
           $("#arrival_date").css({ borderColor: '#cccccc' });
@@ -46,9 +53,7 @@ $( document ).ready(function() {
     }
     if (am_pm === "AM") {
       if (hour < 8 || hour === "12"){
-        alert("Please select a later time, the earliest option is 8:00 AM");
-        $("#arrival_time").css({ borderColor: 'Red' });
-        event.preventDefault();
+        alert("Please note, we would love to have you, but you may have to wait longer than an hour. Ride coordination begins at 9:00 AM");
         return;
       } else {
         $("#arrival_time").css({ borderColor: '#cccccc' });
@@ -63,7 +68,7 @@ $( document ).ready(function() {
         $("#arrival_time").css({ borderColor: '#cccccc' });
       }
     }
-    if ($("#agreement").is(':checked')){
+    if ($("#agreement").is(':checked') || $("#edit_agreement").is(':checked')){
     } else {
      alert("Trip cannot be processed until you confirm the consent agreement");
      $("#agreement_text").css({ color: 'Red' });
@@ -76,4 +81,8 @@ $( document ).ready(function() {
       // console.log(day);
       // event.preventDefault();
   });
+});
+
+$( document ).ready(function() {
+  $('#edit_agreement').each(function(){ this.checked = true; });
 });
