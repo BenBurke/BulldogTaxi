@@ -1,5 +1,5 @@
 <div class="main-content container" id="user_show">
-	<div id="hacky">
+	<div class="span14" id="hacky">
 		<div class= "hero-unit left span7" id="user_info">
 		    <h3><%= @user.fname + " " + @user.lname%></h3>
 		    	<%= image_tag @user.image_url.to_s %>
@@ -20,7 +20,7 @@
 		      	<%= link_to "Edit", edit_user_path, class: "btn-primary btn-large" %>
 					</div>
 		</div>
-		<div class="hero-unit left span9" id="trip_history">
+		<div class="hero-unit left span7" id="trip_history">
 				<h2> Trip History:</h2>
 			<div class="span">
 				<% if @trips != nil %>
@@ -37,9 +37,9 @@
 					<% end %>	
 				<% end %>
 				<% end %>
-				<div class="center">
-			<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
 			</div>
+			<div class="center">
+				<%= link_to "Create New Trip!", new_trip_path, class: "btn-primary btn-large pull-right" %>
 			</div>
 		</div>
 	</div>

@@ -21,6 +21,7 @@ $( document ).ready(function() {
     var arrival_time = $("#arrival_time").val();
     var hour = arrival_time.split(":")[0];
     var am_pm = arrival_time.split(" ")[1];
+    var arrival_airport = $("#arrival_airport_id").val();
     if (arrival_date) {
       if (year != 2014) {
         alert("Please make sure the year selected is 2014. Our operational dates are August 20-23.");
@@ -67,6 +68,14 @@ $( document ).ready(function() {
       } else {
         $("#arrival_time").css({ borderColor: '#cccccc' });
       }
+    }
+    if (arrival_airport === "1"){
+      $('#arrival_airport_id').css({ color: '#555555' });
+    } else {
+      alert("Please select Bradley Int'l Airport");
+      $('#arrival_airport_id').css({ color: 'Red' });
+      event.preventDefault();
+      return;
     }
     if ($("#agreement").is(':checked') || $("#edit_agreement").is(':checked')){
     } else {
