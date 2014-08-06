@@ -39,3 +39,28 @@ $(document).ready(function(){
 		});
 	});
 });
+
+$(document).ready(function(){
+ var divone = $('#one')
+ var divtwo = $('#two')
+ var divthree = $('#three')
+ var divfour = $('#four')
+ var one = $('#one').outerHeight();
+ var two = $('#two').outerHeight();
+ var three = $('#three').outerHeight();
+ var four = $('#four').outerHeight();
+ var result = [one,two,three,four];
+ var height = Math.max.apply( Math, result );
+ divone.css({
+   height: height
+});
+divtwo.css({
+   height: height
+});
+divthree.css({
+   height: height
+});
+divfour.css({
+   height: height
+});
+});
