@@ -40,6 +40,39 @@ $(document).ready(function(){
 	});
 });
 
+
+// $(document).ready(function(){
+// 	    var main = $('#create_charge').width();
+
+//       if (main > 1120){
+//         var div = $('#receipt');
+// 		var divWidth = $('#receipt').outerWidth();
+// 		var parentWidth = div.parent().width();
+// 		var onemarginWidth = Math.abs((parentWidth - (2 * divWidth)) / 2);
+//         var twomarginWidth = parentWidth - onemarginWidth;
+//         console.log(divWidth);
+//         console.log(parentWidth);
+//         console.log(onemarginWidth);
+//         console.log(main);
+// 		div.css({
+// 			marginLeft: onemarginWidth,
+// 			marginRight:0
+// 		});
+// 	$(window).resize(function(e){
+// 		var div = $('#receipt');
+// 		var divWidth = div.outerWidth();
+// 		var parentWidth = div.parent().width();
+// 		var onemarginWidth = Math.abs((parentWidth - (2 * divWidth)) / 2);
+//         var twomarginWidth = Math.abs(parentWidth - onemarginWidth);
+// 		div.css({
+// 			marginLeft: onemarginWidth,
+// 			marginRight: 0
+// 		});
+// 	});
+//    }else{ 
+//    }
+// });
+
 $(document).ready(function(){
  var divone = $('#one')
  var divtwo = $('#two')

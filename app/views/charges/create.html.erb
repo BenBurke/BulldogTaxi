@@ -1,35 +1,36 @@
 <div class="container main-content low-opacity" id="create_charge">
-  <div class= "hero-unit center span7" id="Receipt">
-      <h3> Trip Receipt, paid $<%=@price%>.00<br><small><b>Thanks for riding with Bulldog Taxi! We've sent you a confirmation email.</b></small>
-      <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
-      <h3>Trip For:</h3>
-        <b>Name:</b> <%= @user.fname + " " + @user.lname%> <br>
-        <b>Email:</b> <%= @user.email %> <br>
-        <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
-        <b>NetID:</b> <%= @user.netid %> <br/>
-      <h3>Flight Information:</h3>
-        <b>Flight Number:</b> <%= @trip.flight_number %> <br>
-        <b>Departing From:</b> <%= @flight.departure_airport %><br>
-        <b>Arriving To:</b> <%= @flight.arrival_airport %><br>
-        <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
-        <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
-        <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
+    <div class= "hero-unit center span7" id="receipt">
+        <h3> Trip Receipt, paid $<%=@price%>.00</h3><small><b>Thanks for riding with Bulldog Taxi! We've sent you a confirmation email.</b></small>
+        <h4>confirmation number:</h4> <%= @trip.confirmation %> <br/><br/>
+        <h3>Trip For:</h3>
+          <b>Name:</b> <%= @user.fname + " " + @user.lname%> <br>
+          <b>Email:</b> <%= @user.email %> <br>
+          <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
+          <b>NetID:</b> <%= @user.netid %> <br/>
+        <h3>Flight Information:</h3>
+          <b>Flight Number:</b> <%= @trip.flight_number %> <br>
+          <b>Departing From:</b> <%= @flight.departure_airport %><br>
+          <b>Arriving To:</b> <%= @flight.arrival_airport %><br>
+          <b>Flight Provider:</b> <%= @flight.carrier_name %><br>
+          <b>Arrival Date:</b> <%= outputDateTime(@flight.arrival_datetime)[0] %><br>
+          <b>Arrival Time:</b> <%= outputDateTime(@flight.arrival_datetime)[1] %><br>
 
-  
+    
 
-  </div>
-  <div class="hero-unit span7" id="Next_steps">
-      <h3> Promotional Code: </h3> <h4><em><%= @user.promo_code %></em></h4> <br> <p><b>Share this code with your friends!</b> If someone else signs up with your promotional code, they will get a discount on their ride and <b>you </b> will get a discount on a future trip.
-      <div id="left">
-      <h4> Next Steps</h4>
-        <ul>
-          <li> Meet us at Bradley. We'll be between doors 2 and 3, near baggage claim </li>
-          <li> View your trip any time at your <b><%=link_to "profile page", @user %></b>. 
-          </li>
-          <li> Update your <b><%=link_to "profile page", @user %></b> to improve our matching algorithm. You can update your class year and college so that we can potentially match you with friends you never knew were at the airport!
-           </li>
-        </ul>
-        </div>
-      </p>
-      <h4> We will see you in the airport!<br> <small> Please contact us with any questions or concerns at <em>bulldogtaxirides@gmail.com </em> or (978)767-1566 </small></h4>
+    </div>
+    <div class="hero-unit span7" id="next_steps">
+        <h3> Promotional Code: </h3> <h4><em><%= @user.promo_code %></em></h4> <br> <p><b>Share this code with your friends!</b> If someone else signs up with your promotional code, they will get a discount on their ride and <b>you </b> will get a discount on a future trip.
+        <div id="left">
+        <h4> Next Steps</h4>
+          <ul>
+            <li> Meet us at Bradley. We'll be between doors 2 and 3, near baggage claim </li>
+            <li> View your trip any time at your <b><%=link_to "profile page", @user %></b>. 
+            </li>
+            <li> Update your <b><%=link_to "profile page", @user %></b> to improve our matching algorithm. You can update your class year and college so that we can potentially match you with friends you never knew were at the airport!
+             </li>
+          </ul>
+          </div>
+        </p>
+        <h4> We will see you in the airport!<br> <small> Please contact us with any questions or concerns at <em>bulldogtaxirides@gmail.com </em> or (978)767-1566 </small></h4>
+    </div>
 </div>

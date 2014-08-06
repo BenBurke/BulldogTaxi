@@ -7,7 +7,7 @@
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "20" %>
 						<%= flight.arrival_datetime%><br>
 						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname %><br>
+								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
 						</small>
 					<% end %>
 				<% end %>
@@ -20,7 +20,7 @@
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "21" %>
 						<%= flight.arrival_datetime%><br>
 						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname %><br>
+								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
 						</small>
 					<% end %>
 				<% end %>
@@ -33,7 +33,7 @@
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "22" %>
 						<%= flight.arrival_datetime%><br>
 						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname %><br>
+								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
 						</small>
 					<% end %>
 				<% end %>
@@ -46,7 +46,7 @@
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "23" %>
 						<%= flight.arrival_datetime%><br>
 						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname %><br>
+								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
 						</small>
 					<% end %>
 				<% end %>

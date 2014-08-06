@@ -53,7 +53,10 @@ class TripsController < ApplicationController
 
 	def show
 		@trip = Trip.find(params[:id])
-		@user = User.find(@trip.user_id)
+		@user = User.find_by(netid: session[:cas_user])
+		if User.find(@trip.user_id).netid != @user.netid
+			redirect_to @user
+		end 
 		@flight = @trip.flight
 	end
 
@@ -62,7 +65,7 @@ class TripsController < ApplicationController
 		@user = User.find(@trip.user_id)
 		@flight = @trip.flight
 		@carriers = Carrier.all
-    	@airports = Airport.all
+    @airports = Airport.all
 	end
 
 	def index
