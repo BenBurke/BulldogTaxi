@@ -27,9 +27,9 @@
 				<% @trips.each do |trip| %>
 					<% if trip.payment_status == true %>
 						<% if trip.flight.departure_airport == nil %>
-							<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+							<h5><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h5>
 						<% else %>
-						<h3><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h3>
+						<h5><%= link_to outputDateTime(trip.flight.arrival_datetime)[0] + " " + trip.flight.departure_airport + "/" + trip.flight.arrival_airport.split(" ")[0] , trip %></h5>
 						<% end %>
 						<small><%= trip.flight.departure_airport %> <em>to</em> <%= trip.flight.arrival_airport %><br>
 						Confirmation Number: <%= trip.confirmation %><br>
