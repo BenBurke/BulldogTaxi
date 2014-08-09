@@ -1,52 +1,60 @@
 <div class="main-content container">
 	<div class="row">
-		<div class="hero-unit span7" id="one">
+		<div class="hero-unit span12" >
 			<h3> August 20th </h3>
 			<% @flights.each do |flight| %>
 				<% if flight.trip.payment_status == true %>
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "20" %>
-						<%= flight.arrival_datetime%><br>
-						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
+						 <small> Arrival: <%= flight.arrival_datetime%>| 
+						 Confirmation: <%=flight.trip.confirmation%> |
+								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
+								College: <%= flight.trip.user.college %> |
+								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
 				<% end %>
 			<% end %>
 		</div>
-		<div class="hero-unit span7" id="two">
+		<div class="hero-unit span12" >
 			<h3> August 21st </h3>
 			<% @flights.each do |flight| %>
 				<% if flight.trip.payment_status == true %>
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "21" %>
-						<%= flight.arrival_datetime%><br>
-						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
+						<small> Arrival: <%= flight.arrival_datetime%>| 
+						 Confirmation: <%=flight.trip.confirmation%> |
+								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
+								College: <%= flight.trip.user.college %> |
+								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
 				<% end %>
 			<% end %>
 		</div>
-		<div class="hero-unit span7" id="three">
+		<div class="hero-unit span12" >
 			<h3> August 22nd </h3>
 			<% @flights.each do |flight| %>
 				<% if flight.trip.payment_status == true %>
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "22" %>
-						<%= flight.arrival_datetime%><br>
-						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
+						<small> Arrival: <%= flight.arrival_datetime%>| 
+						 Confirmation: <%=flight.trip.confirmation%> |
+								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
+								College: <%= flight.trip.user.college %> |
+								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
 				<% end %>
 			<% end %>
 		</div>
-		<div class="hero-unit span7" id="four">
+		<div class="hero-unit span12" >
 			<h3> August 23rd </h3>
 			<% @flights.each do |flight| %>
 				<% if flight.trip.payment_status == true %>
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "23" %>
-						<%= flight.arrival_datetime%><br>
-						<small><%=flight.trip.confirmation%> <br>
-								<%= flight.trip.user.fname + " " + flight.trip.user.lname %><br>
+						<small> Arrival: <%= flight.arrival_datetime%>| 
+						 Confirmation: <%=flight.trip.confirmation%> |
+								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
+								College: <%= flight.trip.user.college %> |
+								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
 				<% end %>
