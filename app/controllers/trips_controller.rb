@@ -20,6 +20,7 @@ class TripsController < ApplicationController
                                     arrival_datetime: arrival_datetime, arrival_date: params[:arrival_date], arrival_time: params[:arrival_time])
 			if @trip.save
 				flash.now[:success] = "Trip Created!"
+				@trip.update_attributes(arrival_date: params[:arrival_date], arrival_time: params[:arrival_time])
 				@flight.update_attributes(trip_id: @trip.id,
                                          carrier_name: Carrier.find(params[:carrier_id]).name,
                                          arrival_airport: Airport.find(params[:arrival_airport_id]).name)
