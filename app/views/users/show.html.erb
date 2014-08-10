@@ -10,7 +10,7 @@
 		      <% if @user.college_id != nil %>
 		      <b>College:</b> <%= College.find(@user.college_id).name %> College <br/><br/>
 		      <% else %>
-		      <b> College: <%= @user.college %>
+		      <b> College: <%= @user.college %> <br/><br/>
 		      <% end %>
 		      <% if @user.trips.first != nil %>
 			      <% if @user.trip_count != 0 %>
