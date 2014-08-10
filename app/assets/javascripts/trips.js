@@ -94,4 +94,8 @@ $( document ).ready(function() {
 
 $( document ).ready(function() {
   $('#edit_agreement').each(function(){ this.checked = true; });
+  $('#policy_path').click(function(event) {
+    window.open('http://bulldogtaxi.herokuapp.com/policy');
+    event.preventDefault();
+  });
 });

@@ -29,7 +29,7 @@
 
 			<div class="checkbox" id="agreement_text">
 				<%= check_box_tag :agreement %>
-				<small>You agree that you have read the <br> <%= link_to "Policies", policy_path %> "regarding cancellations, refunds, and risk."</small>
+				<small>You agree that you have read the <br> <%= link_to "Policies", policy_path, id: "policy_path" %> "regarding cancellations, refunds, and risk."</small>
 			</div>
 
 			<%= f.hidden_field :confirmation, value: "BDT-" + rand(1000..9999).to_s %>

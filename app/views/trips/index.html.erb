@@ -5,9 +5,9 @@
 			<% @flights.each do |flight| %>
 				<% if flight.trip.payment_status == true %>
 					<% if flight.arrival_datetime.to_s.split(" ")[0].split("-")[2] == "20" %>
-						 <small> Arrival: <%= flight.arrival_datetime%>| 
+						 <small> Arrival: <%= flight.arrival_datetime%> | 
 						 Confirmation: <%=flight.trip.confirmation%> |
-								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
+								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %> |
 								College: <%= flight.trip.user.college %> |
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
