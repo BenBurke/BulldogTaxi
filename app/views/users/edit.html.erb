@@ -17,8 +17,8 @@
 			  <%= f.label "Yale Class Year:" %>
 			  <%= f.number_field :year %>
 
-			  <%= f.label "Residential College:" %>
-			  <%= f.text_field :college, placeholder: 'Your College' %>
+			  <%= label_tag :college_id, "Residential College:" %>
+				<%= select_tag :college_id, options_from_collection_for_select(@colleges, :id, :name) %>
 
 			  <%= hidden_field_tag :page, "edit" %><br><br>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724154135) do
+ActiveRecord::Schema.define(version: 20140810163441) do
 
   create_table "airports", force: true do |t|
     t.string   "name"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20140724154135) do
     t.datetime "updated_at"
   end
 
+  create_table "colleges", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "flights", force: true do |t|
     t.string   "flight_number"
     t.integer  "carrier_id"
@@ -50,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140724154135) do
     t.datetime "departure_datetime"
     t.integer  "trip_id"
     t.string   "carrier_name"
+    t.string   "arrival_date"
+    t.string   "arrival_time"
   end
 
   add_index "flights", ["trip_id"], name: "index_flights_on_trip_id"
@@ -63,6 +71,8 @@ ActiveRecord::Schema.define(version: 20140724154135) do
     t.string   "confirmation"
     t.integer  "flight_id"
     t.string   "flight_number"
+    t.string   "arrival_date"
+    t.string   "arrival_time"
   end
 
   add_index "trips", ["cab_ride_id"], name: "index_trips_on_cab_ride_id"
@@ -83,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140724154135) do
     t.string   "phone_number"
     t.string   "fname"
     t.string   "lname"
+    t.integer  "college_id"
   end
 
   add_index "users", ["parent_id"], name: "index_users_on_parent_id"

@@ -16,8 +16,8 @@ class TripsController < ApplicationController
         arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
 		@flight = @trip.create_flight(arrival_airport_id: params[:arrival_airport_id], 
                                     departure_airport: params[:departure_airport], 
-                                    trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
-                                    carrier_id: params[:carrier_id])
+                                    trip_id: params[:trip_id], carrier_id: params[:carrier_id],
+                                    arrival_datetime: arrival_datetime, arrival_date: params[:arrival_date], arrival_time: params[:arrival_time])
 			if @trip.save
 				flash.now[:success] = "Trip Created!"
 				@flight.update_attributes(trip_id: @trip.id,
@@ -34,7 +34,8 @@ class TripsController < ApplicationController
 		 @trip = Trip.find(params[:id])
 		 @flight = @trip.flight
 			if @trip.update_attributes(trip_params)
-		    	arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
+		    		@trip.update_attributes(arrival_date: params[:arrival_date], arrival_time: params[:arrival_time])
+		    		arrival_datetime = buildDateTime(params[:arrival_date], params[:arrival_time])
 					@flight.update_attributes(arrival_airport_id: params[:arrival_airport_id], 
 		                                    departure_airport: params[:departure_airport], 
 		                                    trip_id: params[:trip_id], arrival_datetime: arrival_datetime, 
@@ -65,7 +66,7 @@ class TripsController < ApplicationController
 		@user = User.find(@trip.user_id)
 		@flight = @trip.flight
 		@carriers = Carrier.all
-    @airports = Airport.all
+    	@airports = Airport.all
 	end
 
 	def index

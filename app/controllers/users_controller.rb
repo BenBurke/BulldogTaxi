@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       elsif params[:page] == "edit"
         if @user.update_attributes(user_params)
           flash[:success] = "Profile Updated!"
+          @user.update_attributes(college_id: params[:college_id])
           redirect_to @user
         end  
       end 
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by(netid: session[:cas_user])
+    @colleges = College.all
 
   end 
 
@@ -48,6 +50,6 @@ class UsersController < ApplicationController
 
   private
    def user_params
-   	params.require(:user).permit(:fname, :lname, :email, :phone_number, :year, :college)
+   	params.require(:user).permit(:fname, :lname, :email, :phone_number, :year, :college_id)
    end
 end

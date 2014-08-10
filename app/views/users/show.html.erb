@@ -7,7 +7,11 @@
 		      <b>Phone:</b> <%= displayPhoneNumber(@user.phone_number) %> <br/>
 		      <b>NetID:</b> <%= @user.netid %> <br/>
 		      <b>Class Year:</b> <%= @user.year %> <br/>
-		      <b>College:</b> <%= @user.college %> <br/><br/>
+		      <% if @user.college_id != nil %>
+		      <b>College:</b> <%= College.find(@user.college_id).name %> College <br/><br/>
+		      <% else %>
+		      <b> College: <%= @user.college %>
+		      <% end %>
 		      <% if @user.trips.first != nil %>
 			      <% if @user.trip_count != 0 %>
 			      <b>Promotional Code:</b> <%= @user.promo_code %></small> <br/>

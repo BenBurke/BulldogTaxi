@@ -8,3 +8,4 @@
 
 airline_carriers = Carrier.create([{name: 'Southwest'}, {name: 'Air Canada'}, {name: 'American Airlines'}, {name: 'Delta'}, {name: 'JetBlue'}, {name: 'United Airlines'}, {name: 'US Airways'}, {name: 'Other'}])
 airports = Airport.create([{name: 'Bradley International'}, {name: 'More coming soon!'}])
+colleges = College.create([{name: 'Berkeley'},{name: 'Branford'}, {name: 'Calhoun'}, {name: 'Davenport'}, {name: 'Ezra Stiles'}, {name: 'Jonathan Edwards'}, {name: 'Morse'}, {name: 'Pierson'}, {name: 'Saybrook'}, {name: 'Silliman'}, {name: 'Timothy Dwight'}, {name: 'Trumbull'}])
