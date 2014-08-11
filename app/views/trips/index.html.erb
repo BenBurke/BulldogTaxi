@@ -8,7 +8,7 @@
 						 <small> Arrival: <%= flight.arrival_datetime%> | 
 						 Confirmation: <%=flight.trip.confirmation%> |
 								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %> |
-								College: <%= flight.trip.user.college %> |
+								College: <%= College.find(flight.trip.user.college_id).name %> |
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
