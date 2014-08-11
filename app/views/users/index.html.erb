@@ -1,1 +1,16 @@
-hello world!
+<div class="main-content container">
+		<div class="hero-unit span12" >
+			<h3> Users</h3>
+			<% @users.each do |user| %>
+				User: <%= user.fname + " " + user.lname %> |
+				Tokens: <%= user.tokens %> |
+				<% if user.college_id != nil %>
+					College: <%= College.find(user.college_id).name %> |
+				<% else %>
+					College: Unknown |
+				<% end %>
+				Year: <%= user.year %><br><br>
+			<% end %>
+					
+		</div>
+</div>

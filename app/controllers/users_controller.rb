@@ -3,7 +3,12 @@ class UsersController < ApplicationController
   	@user = User.find_by(netid: session[:cas_user])
   end
   def index
-    redirect_to :root
+    @user = User.find_by(netid: session[:cas_user])
+    if @user.netid == 'bwb28' || @user.netid == 'pwc32' 
+      @users = User.all
+    else
+      redirect_to :root
+    end 
   end 
   def update
   	@user = User.find_by(netid: session[:cas_user])

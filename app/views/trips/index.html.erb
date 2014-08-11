@@ -8,7 +8,10 @@
 						 <small> Arrival: <%= flight.arrival_datetime%> | 
 						 Confirmation: <%=flight.trip.confirmation%> |
 								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %> |
-								College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% if flight.trip.user.college_id != nil %>College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% else %>
+								College: Unknown |
+								<% end %>
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
@@ -23,7 +26,10 @@
 						<small> Arrival: <%= flight.arrival_datetime%>| 
 						 Confirmation: <%=flight.trip.confirmation%> |
 								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
-								College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% if flight.trip.user.college_id != nil %>College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% else %>
+								College: Unknown |
+								<% end %>
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
@@ -38,7 +44,10 @@
 						<small> Arrival: <%= flight.arrival_datetime%>| 
 						 Confirmation: <%=flight.trip.confirmation%> |
 								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
-								College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% if flight.trip.user.college_id != nil %>College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% else %>
+								College: Unknown |
+								<% end %>
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
@@ -53,7 +62,10 @@
 						<small> Arrival: <%= flight.arrival_datetime%>| 
 						 Confirmation: <%=flight.trip.confirmation%> |
 								User: <%= flight.trip.user.fname + " " + flight.trip.user.lname %>|
-								College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% if flight.trip.user.college_id != nil %>College: <%= College.find(flight.trip.user.college_id).name %> |
+								<% else %>
+								College: Unknown |
+								<% end %>
 								Year: <%= flight.trip.user.year %><br><br>
 						</small>
 					<% end %>
