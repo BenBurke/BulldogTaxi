@@ -2,6 +2,9 @@
 		<div class="hero-unit span12" >
 			<h3> Users</h3>
 			<% @users.each do |user| %>
+				<% if user.fname != nil && user.lname != nil %>
+				Name: <%= user.fname + " " + user.lname %>
+				<% end %>
 				Net ID: <%= user.netid %> |
 				Tokens: <%= user.tokens %> |
 				<br><br>
