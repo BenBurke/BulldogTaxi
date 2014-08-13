@@ -8,7 +8,7 @@
 		      <b>NetID:</b> <%= @user.netid %> <br/>
 		      <b>Class Year:</b> <%= @user.year %> <br/>
 		      <% if @user.college_id != nil %>
-		      <b>College:</b> <%= College.find(@user.college_id).name %> College <br/><br/>
+		      <b>College:</b> <%= College.find(@user.college_id).name %> <br/><br/>
 		      <% else %>
 		      <b> College: <%= @user.college %> <br/><br/>
 		      <% end %>
