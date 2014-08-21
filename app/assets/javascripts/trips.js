@@ -17,6 +17,7 @@ $( document ).ready(function() {
     var arrival_date = $("#arrival_date").val();
     var month = arrival_date.split("/")[0];
     var day = arrival_date.split("/")[1];
+    var d = new Date;
     var year = arrival_date.split("/")[2];
     var arrival_time = $("#arrival_time").val();
     var hour = arrival_time.split(":")[0];
@@ -31,7 +32,14 @@ $( document ).ready(function() {
       }
       if (month === "08"){
         if (day >= 20 && day <= 23){
-          $("#arrival_date").css({ borderColor: '#cccccc' });
+          if (day == d.getDate() && am_pm === "AM"){
+            alert("The Date you selected is too close to the current Date.");
+            $("#arrival_date").css({ borderColor: 'Red' });
+            event.preventDefault();
+            return;
+          } else {
+            $("#arrival_date").css({ borderColor: '#cccccc' });
+          }
         }
         else {
           alert("Please pick a valid date. Our operational dates are August 20-23.");
